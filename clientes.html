@@ -39,20 +39,18 @@
         .client-logo-card {
             background: white;
             border-radius: 15px;
-            padding: 30px;
+            padding: 18px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             height: 120px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
             transition: var(--transition-smooth);
-            filter: grayscale(1);
-            opacity: 0.7;
         }
 
         .client-logo-card:hover {
-            filter: grayscale(0);
-            opacity: 1;
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
@@ -60,6 +58,22 @@
         .client-logo-card img {
             max-width: 100%;
             max-height: 100%;
+            object-fit: contain;
+        }
+
+        .client-name {
+            color: var(--color-deep-blue);
+            font-family: var(--font-primary);
+            font-size: 0.78rem;
+            font-weight: 800;
+            line-height: 1.25;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .client-logo-img {
+            max-width: 100%;
+            max-height: 48px;
             object-fit: contain;
         }
 
@@ -136,7 +150,7 @@
     <nav class="navbar navbar-expand-lg navbar-hta fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo">
+                <h2 class="text-white mb-0">HTA<span class="text-cyan">Sistemas</span></h2>
             </a>
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i class="fas fa-bars"></i>
@@ -181,53 +195,48 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+1" alt="Cliente 1">
+                        <img src="https://static.wixstatic.com/media/2956c5_44bf991606b14fdd84cfcedcc8a19d83~mv2.png/v1/fill/w_1120,h_760,al_c/adra.png" alt="ADRA Brasil" class="client-logo-img" onerror="this.remove()">
+                        <span class="client-name">ADRA Brasil</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+2" alt="Cliente 2">
+                        <img src="https://www.prefeituraunai.mg.gov.br/pmu2/images/imagens_geral/logo_pmu_geo31.png" alt="Prefeitura Municipal de Unai" class="client-logo-img" onerror="this.remove()">
+                        <span class="client-name">Prefeitura Municipal de Unai</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+3" alt="Cliente 3">
+                        <img src="https://www.santajuliana.mg.gov.br/static/img/brasao.png" alt="Prefeitura Municipal de Santa Juliana" class="client-logo-img" onerror="this.remove()">
+                        <span class="client-name">Prefeitura Municipal de Santa Juliana</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+4" alt="Cliente 4">
+                        <img src="https://leismunicipais.com.br/img/cidades/mg/prata.png" alt="Prefeitura Municipal de Prata" class="client-logo-img" onerror="this.remove()">
+                        <span class="client-name">Prefeitura Municipal de Prata</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="500">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+5" alt="Cliente 5">
+                        <img src="https://sapl.paracatu.mg.leg.br/media/sapl/public/casa/logotipo/segunda_oiKanTa.png" alt="Prefeitura Municipal de Paracatu" class="client-logo-img" onerror="this.remove()">
+                        <span class="client-name">Prefeitura Municipal de Paracatu</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="600">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+6" alt="Cliente 6">
+                        <img src="https://araguari.mg.gov.br/assets/uploads/tinymce/2019/agosto/06618.jpg" alt="Prefeitura Municipal de Araguari" class="client-logo-img" onerror="this.remove()">
+                        <span class="client-name">Prefeitura Municipal de Araguari</span>
                     </div>
                 </div>
-                <!-- Mais logos fictícios -->
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+7" alt="Cliente 7">
+                        <span class="client-name">Fagon Contabilidade</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
                     <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+8" alt="Cliente 8">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+9" alt="Cliente 9">
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="client-logo-card">
-                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+10" alt="Cliente 10">
+                        <span class="client-name">Relotec Relógios de Ponto</span>
                     </div>
                 </div>
             </div>
@@ -376,7 +385,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo footer-logo mb-4">
+                    <h2 class="text-white mb-4">HTA<span class="text-cyan">Sistemas</span></h2>
                     <p class="text-muted">Liderando a transformação digital com inteligência empresarial e compromisso com o resultado.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
