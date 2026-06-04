@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | HTA Sistemas</title>
+    <meta name="description" content="Conheça a história, missão e os valores da HTA Sistemas. Líder em tecnologia para gestão empresarial e terceiro setor.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Vendors -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            color: white;
+        }
+
+        .mvv-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: var(--transition-smooth);
+            border-bottom: 4px solid transparent;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--color-cyan);
+        }
+
+        .mvv-card i {
+            font-size: 2.5rem;
+            color: var(--color-royal-blue);
+            margin-bottom: 20px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 40px;
+            text-align: right;
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 40px;
+            text-align: left;
+            left: 50%;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--color-cyan);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 50px !important; text-align: left !important; left: 0 !important; }
+            .timeline-dot { left: 10px !important; }
+        }
+
+        .method-step {
+            position: relative;
+            padding: 30px;
+            background: var(--color-light-gray);
+            border-radius: 15px;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-hta fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo">
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="solucoes.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Soluções</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="terceiro-setor.html">Terceiro Setor</a></li>
+                            <li><a class="dropdown-item" href="hotelaria.html">Hotelaria</a></li>
+                            <li><a class="dropdown-item" href="financeiro.html">Financeiro</a></li>
+                            <li><a class="dropdown-item" href="integradora.html">Integração</a></li>
+                            <li><a class="dropdown-item" href="pdv.html">Frente de Caixa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="contato.html">Demonstração</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-4 fw-bold">Nossa História</h1>
+            <p class="lead">Inovação e compromisso com o sucesso dos nossos parceiros há mais de duas décadas.</p>
+        </div>
+    </section>
+
+    <!-- História -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe HTA" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">Paixão por <span class="text-royal-blue">Transformar Negócios</span></h2>
+                    <p>Fundada com a visão de simplificar processos complexos, a HTA Sistemas nasceu no coração da inovação tecnológica. Desde o início, nosso foco tem sido criar soluções que não apenas organizam dados, mas geram inteligência para a tomada de decisão.</p>
+                    <p>Ao longo dos anos, expandimos nossa atuação para setores críticos como a Hotelaria e o Terceiro Setor, tornando-nos referência em transparência e eficiência operacional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVV -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mvv-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Missão</h3>
+                        <p>Prover soluções tecnológicas inovadoras e humanizadas que impulsionem a excelência na gestão e a transparência nos resultados de nossos clientes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mvv-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Visão</h3>
+                        <p>Ser reconhecida como a parceira tecnológica mais confiável e inovadora para organizações que buscam impacto positivo e eficiência sustentável.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mvv-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Valores</h3>
+                        <p>Ética inegociável, inovação constante, foco no cliente, transparência radical e compromisso com o desenvolvimento social.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nossa Evolução</h2>
+                <p>Marcos que definiram nossa trajetória</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2005 - A Fundação</h4>
+                        <p>Início das operações focadas em sistemas de gestão sob demanda.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2010 - Expansão Hotelaria</h4>
+                        <p>Lançamento do primeiro módulo especializado para gestão hoteleira.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2015 - O Nascimento do G3N</h4>
+                        <p>Revolução no atendimento ao terceiro setor com foco em OSCs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2020 - Era Cloud & IA</h4>
+                        <p>Migração total para arquitetura cloud e integração de IA para BI.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Hoje</h4>
+                        <p>Mais de 500 clientes ativos e em constante expansão nacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodologia -->
+    <section class="section-padding bg-deep-blue text-white">
+        <div class="container">
+            <div class="section-title text-white" data-aos="fade-up">
+                <h2 class="text-white">Metodologia de Implantação</h2>
+                <p>Sucesso garantido em cada etapa do processo</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="method-step">
+                        <div class="step-number">1</div>
+                        <h5 class="text-deep-blue">Diagnóstico</h5>
+                        <p class="text-muted small">Análise profunda dos processos e necessidades atuais da organização.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="method-step">
+                        <div class="step-number">2</div>
+                        <h5 class="text-deep-blue">Planejamento</h5>
+                        <p class="text-muted small">Definição do cronograma e configuração personalizada do ecossistema.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="method-step">
+                        <div class="step-number">3</div>
+                        <h5 class="text-deep-blue">Treinamento</h5>
+                        <p class="text-muted small">Capacitação intensiva da equipe para máximo aproveitamento da ferramenta.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="method-step">
+                        <div class="step-number">4</div>
+                        <h5 class="text-deep-blue">Go-Live & Suporte</h5>
+                        <p class="text-muted small">Acompanhamento presencial no início e suporte técnico contínuo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo footer-logo mb-4">
+                    <p class="text-muted">Liderando a transformação digital com inteligência empresarial e compromisso com o resultado.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Institucional</h6>
+                    <a href="sobre.html" class="footer-link">Sobre nós</a>
+                    <a href="clientes.html" class="footer-link">Clientes</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contato.html" class="footer-link">Contato</a>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Soluções</h6>
+                    <a href="terceiro-setor.html" class="footer-link">Terceiro Setor</a>
+                    <a href="hotelaria.html" class="footer-link">Hotelaria</a>
+                    <a href="financeiro.html" class="footer-link">Financeiro</a>
+                    <a href="integradora.html" class="footer-link">Integração</a>
+                    <a href="pdv.html" class="footer-link">Frente de Caixa</a>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-white mb-4">Fale Conosco</h6>
+                    <p class="text-muted mb-2"><i class="fas fa-phone-alt me-2 text-cyan"></i> 0800 123 4567</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@htasistemas.com.br</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> São Paulo, SP - Brasil</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 HTA Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Vendors -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

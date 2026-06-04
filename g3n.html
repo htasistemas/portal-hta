@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G3N | Gestão Inteligente para o Terceiro Setor - HTA Sistemas</title>
+    <meta name="description" content="G3N: A solução definitiva de gestão para o Terceiro Setor. Transparência, eficiência e controle total.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Vendors -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .inner-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+            text-align: center;
+        }
+
+        .inner-hero h1 {
+            color: #FFFFFF !important;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .inner-hero .lead {
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+        }
+
+        .module-card {
+            background: var(--color-white);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition-smooth);
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--color-cyan);
+        }
+
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--color-light-gray);
+            color: var(--color-royal-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .module-card:hover .module-icon {
+            background: var(--gradient-primary);
+            color: var(--color-white);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            color: var(--color-cyan);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-hta fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo">
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="solucoes.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Soluções</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="terceiro-setor.html">Terceiro Setor</a></li>
+                            <li><a class="dropdown-item" href="hotelaria.html">Hotelaria</a></li>
+                            <li><a class="dropdown-item" href="financeiro.html">Financeiro</a></li>
+                            <li><a class="dropdown-item" href="integradora.html">Integração</a></li>
+                            <li><a class="dropdown-item" href="pdv.html">Frente de Caixa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="contato.html">Demonstração</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="inner-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-4 fw-bold">G3N | Gestão Inteligente para o <span class="text-cyan">Terceiro Setor</span></h1>
+            <p class="lead max-width-700 mx-auto mt-4">Uma plataforma completa e integrada para potencializar o impacto social da sua organização com transparência e eficiência.</p>
+            <div class="mt-4">
+                <a href="contato.html" class="btn-premium btn-lg">Solicitar Demonstração</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Módulos do Sistema</h2>
+                <p>Ferramentas integradas para uma gestão 360º</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-user-tie"></i></div>
+                        <h4>Administrativo</h4>
+                        <p class="small text-muted">Controle centralizado de processos e documentos institucionais.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h4>Financeiro</h4>
+                        <p class="small text-muted">Gestão completa de contas, fluxo de caixa e orçamentos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-users"></i></div>
+                        <h4>RH</h4>
+                        <p class="small text-muted">Gestão de pessoas, folha de pagamento e voluntariado.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-boxes-stacked"></i></div>
+                        <h4>Patrimônio</h4>
+                        <p class="small text-muted">Controle de bens ativos, inventário e depreciação.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Convênios</h4>
+                        <p class="small text-muted">Monitoramento de parcerias e termos de colaboração.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h4>Projetos</h4>
+                        <p class="small text-muted">Gestão física e financeira de projetos sociais.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-donate"></i></div>
+                        <h4>Captação</h4>
+                        <p class="small text-muted">Ferramentas para mobilização de recursos e doadores.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="450">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-check-double"></i></div>
+                        <h4>Prestação de Contas</h4>
+                        <p class="small text-muted">Relatórios automatizados nos padrões exigidos por lei.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-eye"></i></div>
+                        <h4>Transparência</h4>
+                        <p class="small text-muted">Portal público de dados conforme a Lei de Acesso à Informação.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="550">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h4>Dashboard BI</h4>
+                        <p class="small text-muted">Indicadores em tempo real para tomada de decisão estratégica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Impacto Social" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <div class="section-title text-start mb-4">
+                        <h2 class="after-none">Por que escolher o <span class="text-royal-blue">G3N</span>?</h2>
+                        <p>Desenvolvido especificamente para as necessidades e legislações do terceiro setor.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-shield-check"></i></div>
+                        <div>
+                            <h5>Conformidade Legal</h5>
+                            <p class="text-muted">Totalmente adequado ao MROSC (Marco Regulatório das Organizações da Sociedade Civil).</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-sync"></i></div>
+                        <div>
+                            <h5>Dados Integrados</h5>
+                            <p class="text-muted">Fim das planilhas isoladas. Todas as áreas da sua OSC conectadas em um só lugar.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-lock"></i></div>
+                        <div>
+                            <h5>Segurança e Auditoria</h5>
+                            <p class="text-muted">Rastreabilidade completa de todas as operações e usuários do sistema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-deep-blue text-white text-center">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="text-white mb-4">Potencialize o impacto da sua organização</h2>
+            <p class="lead mb-5">Agende uma demonstração personalizada e conheça todas as funcionalidades do G3N.</p>
+            <a href="contato.html" class="btn-premium btn-lg">Solicitar Demonstração Agora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo footer-logo mb-4">
+                    <p class="text-muted">Liderando a transformação digital com inteligência empresarial e compromisso com o resultado.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Institucional</h6>
+                    <a href="sobre.html" class="footer-link">Sobre nós</a>
+                    <a href="clientes.html" class="footer-link">Clientes</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contato.html" class="footer-link">Contato</a>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Soluções</h6>
+                    <a href="terceiro-setor.html" class="footer-link">Terceiro Setor</a>
+                    <a href="hotelaria.html" class="footer-link">Hotelaria</a>
+                    <a href="financeiro.html" class="footer-link">Financeiro</a>
+                    <a href="integradora.html" class="footer-link">Integração</a>
+                    <a href="pdv.html" class="footer-link">Frente de Caixa</a>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-white mb-4">Fale Conosco</h6>
+                    <p class="text-muted mb-2"><i class="fas fa-phone-alt me-2 text-cyan"></i> 0800 123 4567</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@htasistemas.com.br</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> São Paulo, SP - Brasil</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 HTA Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Vendors -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

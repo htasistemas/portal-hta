@@ -1,0 +1,28 @@
+<svg width="238" height="58" viewBox="0 0 238 58" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">HTA Sistemas</title>
+  <desc id="logoDesc">Logomarca moderna da HTA Sistemas com simbolo tecnologico e assinatura horizontal.</desc>
+  <defs>
+    <linearGradient id="markGradient" x1="6" y1="6" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E40AF"/>
+      <stop offset="0.55" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#00F2FF"/>
+    </linearGradient>
+    <linearGradient id="edgeGradient" x1="12" y1="12" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#00F2FF" stop-opacity="0.25"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <path d="M29 3.5L51.1 16.25V41.75L29 54.5L6.9 41.75V16.25L29 3.5Z" fill="#061226"/>
+    <path d="M29 3.5L51.1 16.25V41.75L29 54.5L6.9 41.75V16.25L29 3.5Z" stroke="url(#markGradient)" stroke-width="4"/>
+    <path d="M17 19H23.3V26.1H34.7V19H41V39H34.7V31.5H23.3V39H17V19Z" fill="white"/>
+    <path d="M15.8 43.3L29 11.8L42.2 43.3H36.7L33.9 36.8H24.1L21.3 43.3H15.8ZM26 32.1H32L29 24.8L26 32.1Z" fill="url(#markGradient)" opacity="0.95"/>
+    <path d="M12.4 18.3L29 8.8L45.6 18.3" stroke="url(#edgeGradient)" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+  <g>
+    <text x="68" y="34" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="1.2">HTA</text>
+    <text x="127" y="34" fill="#00F2FF" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="0.4">Sistemas</text>
+    <rect x="70" y="42" width="74" height="3" rx="1.5" fill="url(#markGradient)"/>
+    <text x="151" y="46" fill="#B8C7E6" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.2">GESTAO INTELIGENTE</text>
+  </g>
+</svg>

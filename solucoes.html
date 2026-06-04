@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluções | HTA Sistemas</title>
+    <meta name="description" content="Conheça o ecossistema completo de soluções da HTA Sistemas: G3N, Hotelaria, Finance Pro, CRM e muito mais.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Vendors -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            color: white;
+            text-align: center;
+        }
+
+        .solution-hub-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-hub-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .solution-hub-card:hover {
+            transform: translateY(-15px);
+            color: white;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .solution-hub-card:hover::before {
+            opacity: 1;
+        }
+
+        .solution-hub-card i {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--color-royal-blue);
+            transition: var(--transition-smooth);
+        }
+
+        .solution-hub-card:hover i {
+            color: white;
+        }
+
+        .solution-hub-card:hover h3, 
+        .solution-hub-card:hover p,
+        .solution-hub-card:hover .btn-link {
+            color: white !important;
+        }
+
+        .btn-link {
+            color: var(--color-royal-blue);
+            font-weight: 700;
+            padding: 0;
+            margin-top: auto;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-hta fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo">
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="solucoes.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Soluções</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="terceiro-setor.html">Terceiro Setor</a></li>
+                            <li><a class="dropdown-item" href="hotelaria.html">Hotelaria</a></li>
+                            <li><a class="dropdown-item" href="financeiro.html">Financeiro</a></li>
+                            <li><a class="dropdown-item" href="integradora.html">Integração</a></li>
+                            <li><a class="dropdown-item" href="pdv.html">Frente de Caixa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="contato.html">Demonstração</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-4 fw-bold">Hub de <span class="text-cyan">Soluções</span></h1>
+            <p class="lead">Tecnologia integrada para cada necessidade do seu negócio.</p>
+        </div>
+    </section>
+
+    <!-- Solutions Hub -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Terceiro Setor -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="solution-hub-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>Terceiro Setor</h3>
+                        <p>Plataforma completa para gestão de organizações do terceiro setor, focada em transparência e prestação de contas com o G3N.</p>
+                        <a href="terceiro-setor.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
+                    </div>
+                </div>
+                <!-- Hotelaria -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="solution-hub-card">
+                        <i class="fas fa-concierge-bell"></i>
+                        <h3>Hotelaria</h3>
+                        <p>Gestão 360º para meios de hospedagem. Reservas, front-desk, governança e financeiro em um só lugar.</p>
+                        <a href="hotelaria.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
+                    </div>
+                </div>
+                <!-- Financeiro -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="solution-hub-card">
+                        <i class="fas fa-vault"></i>
+                        <h3>Financeiro</h3>
+                        <p>Sistema financeiro avançado com automação bancária, fluxo de caixa e relatórios estratégicos de BI.</p>
+                        <a href="financeiro.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
+                    </div>
+                </div>
+                <!-- Integração -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="solution-hub-card">
+                        <i class="fas fa-microscope"></i>
+                        <h3>Integração</h3>
+                        <p>Middleware HTA Connect para interfaceamento laboratorial inteligente e automação de processos clínicos.</p>
+                        <a href="integradora.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
+                    </div>
+                </div>
+                <!-- Frente de Caixa -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="solution-hub-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Frente de Caixa</h3>
+                        <p>HTA PDV Pro: O ponto de venda ultra-rápido com IA preditiva e design futurista.</p>
+                        <a href="pdv.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
+                    </div>
+                </div>
+                <!-- Consultoria Especializada -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="solution-hub-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Consultoria</h3>
+                        <p>Apoio estratégico para implantação de melhores práticas de gestão e tecnologia em sua empresa.</p>
+                        <a href="contato.html" class="btn-link">Saber mais <i class="fas fa-chevron-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Solution CTA -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center bg-deep-blue rounded-5 p-5 text-white shadow-lg overflow-hidden position-relative">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h2 class="text-white mb-4">Precisa de uma solução sob medida?</h2>
+                    <p class="lead opacity-75 mb-4">Nossa equipe de especialistas está pronta para desenvolver fluxos personalizados para os desafios específicos da sua organização.</p>
+                    <a href="contato.html" class="btn-premium">Agendar Reunião Estratégica</a>
+                </div>
+                <div class="col-lg-5 text-center d-none d-lg-block" data-aos="fade-left">
+                    <i class="fas fa-rocket text-cyan" style="font-size: 15rem; opacity: 0.1; position: absolute; right: -20px; bottom: -20px;"></i>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Consultoria" class="img-fluid rounded-4 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo footer-logo mb-4">
+                    <p class="text-muted">Liderando a transformação digital com inteligência empresarial e compromisso com o resultado.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Institucional</h6>
+                    <a href="sobre.html" class="footer-link">Sobre nós</a>
+                    <a href="clientes.html" class="footer-link">Clientes</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contato.html" class="footer-link">Contato</a>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Soluções</h6>
+                    <a href="terceiro-setor.html" class="footer-link">Terceiro Setor</a>
+                    <a href="hotelaria.html" class="footer-link">Hotelaria</a>
+                    <a href="financeiro.html" class="footer-link">Financeiro</a>
+                    <a href="integradora.html" class="footer-link">Integração</a>
+                    <a href="pdv.html" class="footer-link">Frente de Caixa</a>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-white mb-4">Fale Conosco</h6>
+                    <p class="text-muted mb-2"><i class="fas fa-phone-alt me-2 text-cyan"></i> 0800 123 4567</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@htasistemas.com.br</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> São Paulo, SP - Brasil</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 HTA Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Vendors -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

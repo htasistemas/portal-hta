@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HTA Sistemas">
+  <defs>
+    <linearGradient id="g" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E40AF"/>
+      <stop offset="0.55" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#00F2FF"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 5L55.4 18.5V45.5L32 59L8.6 45.5V18.5L32 5Z" fill="#061226" stroke="url(#g)" stroke-width="4"/>
+  <path d="M18.5 21H25V28.2H39V21H45.5V43H39V35H25V43H18.5V21Z" fill="#FFFFFF"/>
+  <path d="M19 47L32 16.5L45 47H39.2L36.7 41.1H27.3L24.8 47H19ZM29.4 35.8H34.6L32 29.4L29.4 35.8Z" fill="url(#g)"/>
+</svg>

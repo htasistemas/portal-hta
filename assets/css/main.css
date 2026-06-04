@@ -1,0 +1,176 @@
+/* 
+    HTA Sistemas - Design System 
+    Author: Gemini CLI / Senior UX Designer & Front-End Developer
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+
+:root {
+    /* Colors */
+    --color-deep-blue: #0A192F;
+    --color-royal-blue: #1E40AF;
+    --color-cyan: #00F2FF;
+    --color-graphite: #334155;
+    --color-white: #FFFFFF;
+    --color-light-gray: #F8FAFC;
+    --color-dark-gray: #1E293B;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--color-royal-blue) 0%, var(--color-cyan) 100%);
+    
+    /* Typography */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--color-graphite);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--color-deep-blue);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+/* Utilities */
+.bg-deep-blue { background-color: var(--color-deep-blue); }
+.text-cyan { color: var(--color-cyan); }
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-premium {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+}
+
+.btn-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+    color: var(--color-white);
+}
+
+.btn-outline-premium {
+    background: transparent;
+    color: var(--color-royal-blue);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    border: 2px solid var(--color-royal-blue);
+    display: inline-block;
+}
+
+.btn-outline-premium:hover {
+    background: var(--color-royal-blue);
+    color: var(--color-white);
+}
+
+/* Layout Components */
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-title h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Custom Navbar */
+.navbar-hta {
+    padding: 20px 0;
+    transition: var(--transition-smooth);
+    z-index: 1100;
+}
+
+.navbar-hta.scrolled {
+    background: var(--color-deep-blue);
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.brand-logo {
+    display: block;
+    width: 190px;
+    max-width: 58vw;
+    height: auto;
+}
+
+.footer-logo {
+    width: 220px;
+}
+
+.nav-link {
+    font-family: var(--font-primary);
+    color: var(--color-white) !important;
+    font-weight: 500;
+    margin: 0 15px;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--color-cyan) !important;
+}
+
+/* Footer Premium */
+.footer-premium {
+    background: var(--color-deep-blue);
+    color: var(--color-white);
+    padding: 80px 0 30px;
+}
+
+.footer-link {
+    color: rgba(255,255,255,0.7);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.footer-link:hover {
+    color: var(--color-cyan);
+    padding-left: 5px;
+}

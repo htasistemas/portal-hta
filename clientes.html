@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes & Cases | HTA Sistemas</title>
+    <meta name="description" content="Conheça as empresas e organizações que confiam na HTA Sistemas. Veja nossos cases de sucesso e depoimentos.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Vendors -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            color: white;
+        }
+
+        .client-logo-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: var(--transition-smooth);
+            filter: grayscale(1);
+            opacity: 0.7;
+        }
+
+        .client-logo-card:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .client-logo-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: var(--transition-smooth);
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .case-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .case-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .case-card:hover .case-img img {
+            transform: scale(1.1);
+        }
+
+        .case-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .case-content {
+            padding: 30px;
+        }
+
+        .case-result {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .result-item span {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--color-royal-blue);
+        }
+
+        .result-item small {
+            color: var(--color-graphite);
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-hta fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo">
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="solucoes.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Soluções</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="terceiro-setor.html">Terceiro Setor</a></li>
+                            <li><a class="dropdown-item" href="hotelaria.html">Hotelaria</a></li>
+                            <li><a class="dropdown-item" href="financeiro.html">Financeiro</a></li>
+                            <li><a class="dropdown-item" href="integradora.html">Integração</a></li>
+                            <li><a class="dropdown-item" href="pdv.html">Frente de Caixa</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="contato.html">Demonstração</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-4 fw-bold">Nossos <span class="text-cyan">Clientes</span></h1>
+            <p class="lead">Parcerias de longo prazo baseadas em confiança e resultados mensuráveis.</p>
+        </div>
+    </section>
+
+    <!-- Grid de Logos -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Quem Confia em Nós</h2>
+                <p>Mais de 500 organizações em todo o Brasil utilizam as soluções HTA</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+1" alt="Cliente 1">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+2" alt="Cliente 2">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+3" alt="Cliente 3">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+4" alt="Cliente 4">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+5" alt="Cliente 5">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+6" alt="Cliente 6">
+                    </div>
+                </div>
+                <!-- Mais logos fictícios -->
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+7" alt="Cliente 7">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+8" alt="Cliente 8">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+9" alt="Cliente 9">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="client-logo-card">
+                        <img src="https://via.placeholder.com/150x80?text=LOGOTIPO+10" alt="Cliente 10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases de Sucesso -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Cases de Sucesso</h2>
+                <p>Histórias reais de transformação digital</p>
+            </div>
+            <div class="row g-4">
+                <!-- Case 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-card">
+                        <div class="case-img">
+                            <span class="case-badge">Hotelaria</span>
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Luxury">
+                        </div>
+                        <div class="case-content">
+                            <h3>Resort Mar Azul</h3>
+                            <p>Otimização de reservas e integração total do PDV com o sistema financeiro centralizado.</p>
+                            <div class="case-result">
+                                <div class="result-item">
+                                    <span>+35%</span>
+                                    <small>Ocupação</small>
+                                </div>
+                                <div class="result-item">
+                                    <span>-50%</span>
+                                    <small>Erros de Caixa</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Case 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-card">
+                        <div class="case-img">
+                            <span class="case-badge">Terceiro Setor</span>
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ONG Esperança">
+                        </div>
+                        <div class="case-content">
+                            <h3>Fundação Vida Nova</h3>
+                            <p>Implantação do G3N para controle rigoroso de convênios e transparência na prestação de contas pública.</p>
+                            <div class="case-result">
+                                <div class="result-item">
+                                    <span>100%</span>
+                                    <small>Auditoria OK</small>
+                                </div>
+                                <div class="result-item">
+                                    <span>40h</span>
+                                    <small>Economia/Mês</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Case 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="case-card">
+                        <div class="case-img">
+                            <span class="case-badge">Empresarial</span>
+                            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Escritório Moderno">
+                        </div>
+                        <div class="case-content">
+                            <h3>Grupo TechLog</h3>
+                            <p>Unificação das operações de 5 filiais através do Finance Pro Master com dashboards em tempo real.</p>
+                            <div class="case-result">
+                                <div class="result-item">
+                                    <span>+22%</span>
+                                    <small>Lucratividade</small>
+                                </div>
+                                <div class="result-item">
+                                    <span>Real-time</span>
+                                    <small>Indicadores</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section-padding bg-deep-blue text-white">
+        <div class="container">
+            <div class="section-title text-white" data-aos="fade-up">
+                <h2 class="text-white">O que nossos clientes dizem</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-dark-gray p-4 rounded-4 h-100 border border-secondary">
+                        <div class="mb-3 text-cyan">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"O suporte técnico da HTA é diferenciado. Sempre proativos e resolutivos, nos dão segurança total para operar."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://i.pravatar.cc/150?u=1" class="rounded-circle me-3" width="50" alt="Avatar">
+                            <div>
+                                <h6 class="mb-0">Carlos Mendes</h6>
+                                <small class="text-cyan">Diretor de TI, Blue Group</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-dark-gray p-4 rounded-4 h-100 border border-secondary">
+                        <div class="mb-3 text-cyan">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"A facilidade de uso do sistema surpreendeu nossa equipe. A curva de aprendizado foi mínima e os ganhos foram imediatos."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://i.pravatar.cc/150?u=2" class="rounded-circle me-3" width="50" alt="Avatar">
+                            <div>
+                                <h6 class="mb-0">Ana Paula Silveira</h6>
+                                <small class="text-cyan">Gerente Operacional, Hotel Sun</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bg-dark-gray p-4 rounded-4 h-100 border border-secondary">
+                        <div class="mb-3 text-cyan">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"Como OSC, a transparência é tudo. O sistema G3N nos permitiu elevar o nível de nossas prestações de contas de forma incrível."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://i.pravatar.cc/150?u=3" class="rounded-circle me-3" width="50" alt="Avatar">
+                            <div>
+                                <h6 class="mb-0">Ricardo Gomes</h6>
+                                <small class="text-cyan">Presidente, ONG Futuro</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <img src="assets/icons/logo-hta-sistemas.svg" alt="HTA Sistemas" class="brand-logo footer-logo mb-4">
+                    <p class="text-muted">Liderando a transformação digital com inteligência empresarial e compromisso com o resultado.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Institucional</h6>
+                    <a href="sobre.html" class="footer-link">Sobre nós</a>
+                    <a href="clientes.html" class="footer-link">Clientes</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contato.html" class="footer-link">Contato</a>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white mb-4">Soluções</h6>
+                    <a href="terceiro-setor.html" class="footer-link">Terceiro Setor</a>
+                    <a href="hotelaria.html" class="footer-link">Hotelaria</a>
+                    <a href="financeiro.html" class="footer-link">Financeiro</a>
+                    <a href="integradora.html" class="footer-link">Integração</a>
+                    <a href="pdv.html" class="footer-link">Frente de Caixa</a>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-white mb-4">Fale Conosco</h6>
+                    <p class="text-muted mb-2"><i class="fas fa-phone-alt me-2 text-cyan"></i> 0800 123 4567</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@htasistemas.com.br</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> São Paulo, SP - Brasil</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 HTA Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Vendors -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
