@@ -1,4 +1,5 @@
 name = "portal-hta"
+account_id = "e31bff8debe7a2b8f265dac1350f0257"
 compatibility_date = "2025-01-01"
 workers_dev = true
 
