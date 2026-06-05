@@ -56,12 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (counterTimers.has(counter)) return;
 
             let count = Number(counter.getAttribute('data-target')) || 0;
-            const interval = Number(counter.getAttribute('data-interval')) || 260;
+            const interval = Number(counter.getAttribute('data-interval')) || 1200;
+            const step = Number(counter.getAttribute('data-step')) || 1;
 
             counter.innerText = count.toLocaleString('pt-BR');
 
             const timer = setInterval(() => {
-                count += 1;
+                count += step;
                 counter.innerText = count.toLocaleString('pt-BR');
             }, interval);
 

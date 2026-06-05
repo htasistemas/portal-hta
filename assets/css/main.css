@@ -40,6 +40,13 @@ body {
     overflow-x: hidden;
 }
 
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     color: var(--color-deep-blue);
@@ -71,6 +78,8 @@ a {
     display: inline-block;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+    text-align: center;
+    white-space: normal;
 }
 
 .btn-premium:hover {
@@ -88,6 +97,8 @@ a {
     font-weight: 600;
     border: 2px solid var(--color-royal-blue);
     display: inline-block;
+    text-align: center;
+    white-space: normal;
 }
 
 .btn-outline-premium:hover {
@@ -178,4 +189,66 @@ a {
 .footer-link:hover {
     color: var(--color-cyan);
     padding-left: 5px;
+}
+
+@media (max-width: 991px) {
+    .section-padding {
+        padding: 72px 0;
+    }
+
+    .section-title {
+        margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .navbar-hta {
+        background: rgba(10, 25, 47, 0.98);
+        padding: 12px 0;
+    }
+
+    .navbar-collapse {
+        padding: 16px 0 8px;
+    }
+
+    .nav-link {
+        margin: 4px 0;
+        padding: 10px 0;
+    }
+
+    .nav-link.btn-premium {
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px 22px;
+    }
+
+    .footer-premium {
+        padding: 60px 0 26px;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-padding {
+        padding: 54px 0;
+    }
+
+    .section-title {
+        margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+        font-size: 1.65rem;
+    }
+
+    .btn-premium,
+    .btn-outline-premium {
+        width: 100%;
+        padding: 11px 18px;
+    }
+
+    .footer-premium {
+        padding: 48px 0 24px;
+    }
 }
