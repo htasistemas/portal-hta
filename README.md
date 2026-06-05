@@ -1,12 +1,12 @@
 # Portal HTA
 
-Site institucional estatico da HTA Sistemas, preparado para deploy no Cloudflare Pages.
+Site institucional estatico da HTA Sistemas, preparado para deploy no Cloudflare Workers com Static Assets.
 
 ## Deploy em producao
 
-O workflow `.github/workflows/static.yml` publica automaticamente no Cloudflare Pages quando houver push na branch `main`.
+O workflow `.github/workflows/static.yml` publica automaticamente no Cloudflare quando houver push na branch `main`.
 
-Projeto Cloudflare Pages esperado: `portal-hta`
+Worker esperado: `portal-hta`
 Dominio de producao: `https://htasistemas.com.br`
 
 ### Secrets no GitHub
@@ -14,13 +14,13 @@ Dominio de producao: `https://htasistemas.com.br`
 Cadastre estes secrets em `Settings > Secrets and variables > Actions` no repositorio GitHub:
 
 - `CLOUDFLARE_ACCOUNT_ID`: Account ID da conta Cloudflare.
-- `CLOUDFLARE_API_TOKEN`: token com permissao `Account > Cloudflare Pages > Edit`.
+- `CLOUDFLARE_API_TOKEN`: token com permissao `Account > Workers Scripts > Edit`.
 
 ### Configuracao no Cloudflare
 
-1. Crie ou use o projeto Pages `portal-hta`.
-2. Em `Workers & Pages > portal-hta > Custom domains`, adicione `htasistemas.com.br`.
-3. Como `htasistemas.com.br` e dominio apex, ele precisa estar como zona DNS na mesma conta Cloudflare do Pages.
+1. O Worker `portal-hta` deve existir em `Workers & Pages`.
+2. Em `Workers & Pages > portal-hta > Domains`, mantenha o custom domain `htasistemas.com.br`.
+3. O arquivo `wrangler.toml` aponta os assets publicos para `./dist`.
 4. Mantenha o registro/subdominio `g3n.htasistemas.com.br` apontando para a hospedagem atual do sistema G3. O deploy do portal nao altera esse subdominio.
 
 Depois disso, cada push em `main` atualiza o portal em `https://htasistemas.com.br`.
