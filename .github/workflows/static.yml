@@ -35,5 +35,5 @@ jobs:
           wranglerVersion: latest
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --config wrangler.toml --verbose
+          command: deploy dist --config wrangler.toml --verbose
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
