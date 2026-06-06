@@ -28,12 +28,8 @@ jobs:
           cp -R assets dist/assets
 
       - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           WRANGLER_LOG: debug
-        with:
-          wranglerVersion: latest
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy dist --config wrangler.toml --verbose
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        run: npx wrangler deploy --config wrangler.toml --verbose
