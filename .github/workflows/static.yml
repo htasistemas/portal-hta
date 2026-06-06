@@ -24,7 +24,6 @@ jobs:
         run: |
           mkdir -p dist
           cp *.html robots.txt sitemap.xml dist/
-          cp _redirects dist/
           cp -R assets dist/assets
 
       - name: Deploy to Cloudflare Workers
