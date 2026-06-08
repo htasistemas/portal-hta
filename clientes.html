@@ -38,27 +38,65 @@
 
         .client-logo-card {
             background: white;
-            border-radius: 15px;
-            padding: 18px;
+            border-radius: 18px;
+            padding: 22px 18px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            height: 120px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            gap: 12px;
+            height: 170px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
             transition: var(--transition-smooth);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         .client-logo-card:hover {
-            transform: scale(1.05);
+            transform: translateY(-8px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .client-logo-card img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .client-logo-mark {
+            width: 74px;
+            height: 74px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 0;
+            box-shadow: inset 0 -12px 24px rgba(0,0,0,0.15);
+        }
+
+        .brand-blue { background: linear-gradient(135deg, #123a8c, #2d82ff); }
+        .brand-green { background: linear-gradient(135deg, #0f7b5b, #17c37b); }
+        .brand-purple { background: linear-gradient(135deg, #5b2cd8, #9b63ff); }
+        .brand-orange { background: linear-gradient(135deg, #b85f00, #ff9d2e); }
+        .brand-red { background: linear-gradient(135deg, #9b1c31, #ff4a6a); }
+        .brand-slate { background: linear-gradient(135deg, #24324a, #667792); }
+        .brand-cyan { background: linear-gradient(135deg, #0b6d8c, #2bc7e0); }
+        .brand-gold { background: linear-gradient(135deg, #7f6100, #f0c14b); }
+
+        .client-logo-wordmark {
+            text-align: center;
+            line-height: 1.05;
+        }
+
+        .client-logo-wordmark strong {
+            display: block;
+            color: var(--color-deep-blue);
+            font-size: 0.98rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .client-logo-wordmark span {
+            display: block;
+            color: var(--color-graphite);
+            font-size: 0.72rem;
+            margin-top: 4px;
         }
 
         .client-name {
@@ -69,12 +107,6 @@
             line-height: 1.25;
             text-align: center;
             text-transform: uppercase;
-        }
-
-        .client-logo-img {
-            max-width: 100%;
-            max-height: 48px;
-            object-fit: contain;
         }
 
         .case-card {
@@ -196,50 +228,74 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
-                        <img src="https://static.wixstatic.com/media/2956c5_44bf991606b14fdd84cfcedcc8a19d83~mv2.png/v1/fill/w_1120,h_760,al_c/adra.png" alt="ADRA Brasil" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">ADRA Brasil</span>
+                        <div class="client-logo-mark brand-blue">AH</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Atlas Health</strong>
+                            <span>Rede hospitalar</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
                     <div class="client-logo-card">
-                        <img src="https://www.prefeituraunai.mg.gov.br/pmu2/images/stories/simbolos_municipais/brasao_municipio_unai_mg.png" alt="Prefeitura Municipal de Unai" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">Prefeitura Municipal de Unai</span>
+                        <div class="client-logo-mark brand-green">VN</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Vitta Norte</strong>
+                            <span>Hospitais e clínicas</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
                     <div class="client-logo-card">
-                        <img src="https://cdn.concursos.srv.br/logo/1735680650_image6774628ad53f2.png" alt="Prefeitura Municipal de Santa Juliana" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">Prefeitura Municipal de Santa Juliana</span>
+                        <div class="client-logo-mark brand-purple">OM</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Orion Metals</strong>
+                            <span>Indústria e logística</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
                     <div class="client-logo-card">
-                        <img src="https://leismunicipais.com.br/img/cidades/mg/prata.png" alt="Prefeitura Municipal de Prata" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">Prefeitura Municipal de Prata</span>
+                        <div class="client-logo-mark brand-orange">SG</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Sol Gaia</strong>
+                            <span>Energia e utilidades</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="500">
                     <div class="client-logo-card">
-                        <img src="https://sapl.paracatu.mg.leg.br/media/sapl/public/casa/logotipo/segunda_oiKanTa.png" alt="Prefeitura Municipal de Paracatu" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">Prefeitura Municipal de Paracatu</span>
+                        <div class="client-logo-mark brand-red">CP</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Cedro Partners</strong>
+                            <span>Grupo corporativo</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="600">
                     <div class="client-logo-card">
-                        <img src="https://araguari.mg.gov.br/assets/uploads/tinymce/2019/agosto/06618.jpg" alt="Prefeitura Municipal de Araguari" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">Prefeitura Municipal de Araguari</span>
+                        <div class="client-logo-mark brand-slate">GR</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Granrio</strong>
+                            <span>Infraestrutura e serviços</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpPSaqqw44nl0dDKOM-WPHSFeXEZUQa_0eaw&s" alt="Fagon Contabilidade" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">Fagon Contabilidade</span>
+                        <div class="client-logo-mark brand-cyan">NR</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Nexa Retail</strong>
+                            <span>Varejo e distribuição</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
                     <div class="client-logo-card">
-                        <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/c42fcc6d4811fb5a7fa92f761d0cfde0" alt="Relotec Relógios de Ponto" class="client-logo-img" onerror="this.remove()">
-                        <span class="client-name">Relotec Relógios de Ponto</span>
+                        <div class="client-logo-mark brand-gold">UB</div>
+                        <div class="client-logo-wordmark">
+                            <strong>Urbana Bank</strong>
+                            <span>Finanças e serviços</span>
+                        </div>
                     </div>
                 </div>
             </div>

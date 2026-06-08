@@ -44,6 +44,9 @@
             align-items: flex-start;
             position: relative;
             z-index: 1;
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
         }
 
         .solution-hub-card::before {
@@ -71,10 +74,24 @@
         }
 
         .solution-hub-card i {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
+            font-size: 2.2rem;
             color: var(--color-royal-blue);
             transition: var(--transition-smooth);
+        }
+
+        .solution-media {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            background: rgba(30, 64, 175, 0.08);
+        }
+
+        .solution-hub-card:hover .solution-media {
+            background: rgba(255,255,255,0.18);
         }
 
         .solution-hub-card:hover i {
@@ -83,16 +100,20 @@
 
         .solution-hub-card:hover h3, 
         .solution-hub-card:hover p,
-        .solution-hub-card:hover .btn-link {
+        .solution-hub-card:hover .solution-link {
             color: white !important;
         }
 
-        .btn-link {
+        .solution-link {
             color: var(--color-royal-blue);
             font-weight: 700;
             padding: 0;
             margin-top: auto;
             text-decoration: none;
+        }
+
+        .solution-link i {
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -141,60 +162,55 @@
     <!-- Solutions Hub -->
     <section class="section-padding">
         <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Escolha a solução</h2>
+                <p>Um hub único para acessar cada produto da HTA com clareza e rapidez.</p>
+            </div>
             <div class="row g-4">
                 <!-- Terceiro Setor -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="solution-hub-card">
-                        <i class="fas fa-hand-holding-heart"></i>
+                    <a href="terceiro-setor.html" class="solution-hub-card">
+                        <div class="solution-media"><i class="fas fa-hand-holding-heart"></i></div>
                         <h3>Terceiro Setor</h3>
                         <p>Plataforma completa para gestão de organizações do terceiro setor, focada em transparência e prestação de contas com o G3N.</p>
-                        <a href="terceiro-setor.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
-                    </div>
+                        <span class="solution-link">Abrir <i class="fas fa-chevron-right ms-2"></i></span>
+                    </a>
                 </div>
                 <!-- Hotelaria -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="solution-hub-card">
-                        <i class="fas fa-concierge-bell"></i>
+                    <a href="hotelaria.html" class="solution-hub-card">
+                        <div class="solution-media"><i class="fas fa-hotel"></i></div>
                         <h3>Hotelaria</h3>
                         <p>Gestão 360º para meios de hospedagem. Reservas, front-desk, governança e financeiro em um só lugar.</p>
-                        <a href="hotelaria.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
-                    </div>
+                        <span class="solution-link">Abrir <i class="fas fa-chevron-right ms-2"></i></span>
+                    </a>
                 </div>
                 <!-- Financeiro -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="solution-hub-card">
-                        <i class="fas fa-vault"></i>
+                    <a href="financeiro.html" class="solution-hub-card">
+                        <div class="solution-media"><i class="fas fa-chart-line"></i></div>
                         <h3>Financeiro</h3>
                         <p>Sistema financeiro avançado com automação bancária, fluxo de caixa e relatórios estratégicos de BI.</p>
-                        <a href="financeiro.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
-                    </div>
+                        <span class="solution-link">Abrir <i class="fas fa-chevron-right ms-2"></i></span>
+                    </a>
                 </div>
                 <!-- Integração -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="solution-hub-card">
-                        <i class="fas fa-microscope"></i>
+                    <a href="integradora.html" class="solution-hub-card">
+                        <div class="solution-media"><i class="fas fa-plug-circle-bolt"></i></div>
                         <h3>Integração</h3>
-                        <p>Middleware HTA Connect para interfaceamento laboratorial inteligente e automação de processos clínicos.</p>
-                        <a href="integradora.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
-                    </div>
+                        <p>Integração entre sistemas e processos com conectores inteligentes para manter tudo em sincronia.</p>
+                        <span class="solution-link">Abrir <i class="fas fa-chevron-right ms-2"></i></span>
+                    </a>
                 </div>
                 <!-- Frente de Caixa -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="solution-hub-card">
-                        <i class="fas fa-bolt"></i>
+                    <a href="pdv.html" class="solution-hub-card">
+                        <div class="solution-media"><i class="fas fa-cash-register"></i></div>
                         <h3>Frente de Caixa</h3>
-                        <p>HTA PDV Pro: O ponto de venda ultra-rápido com IA preditiva e design futurista.</p>
-                        <a href="pdv.html" class="btn-link">Ver detalhes <i class="fas fa-chevron-right ms-2"></i></a>
-                    </div>
-                </div>
-                <!-- Consultoria Especializada -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="solution-hub-card">
-                        <i class="fas fa-user-tie"></i>
-                        <h3>Consultoria</h3>
-                        <p>Apoio estratégico para implantação de melhores práticas de gestão e tecnologia em sua empresa.</p>
-                        <a href="contato.html" class="btn-link">Saber mais <i class="fas fa-chevron-right ms-2"></i></a>
-                    </div>
+                        <p>PDV moderno com operação didática, rápida e organizada para o dia a dia da loja.</p>
+                        <span class="solution-link">Abrir <i class="fas fa-chevron-right ms-2"></i></span>
+                    </a>
                 </div>
             </div>
         </div>
