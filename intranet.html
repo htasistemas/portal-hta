@@ -415,6 +415,10 @@
         const logoutButton = document.getElementById('logoutButton');
         const clientSearch = document.getElementById('clientSearch');
         const clientRows = Array.from(document.querySelectorAll('#clientTableBody tr'));
+        const validCredentials = [
+            { username: 'hta', password: 'clientes2026' },
+            { username: 'arthurmartinstorres@gmail.com', password: 'Admin@123' }
+        ];
 
         const showDashboard = () => {
             loginPanel.style.display = 'none';
@@ -435,7 +439,11 @@
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value;
 
-            if (username === 'hta' && password === 'clientes2026') {
+            const hasValidCredentials = validCredentials.some(credential => (
+                credential.username === username && credential.password === password
+            ));
+
+            if (hasValidCredentials) {
                 sessionStorage.setItem('htaIntranetAuth', 'true');
                 loginError.style.display = 'none';
                 showDashboard();
