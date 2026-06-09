@@ -16,6 +16,27 @@ Cadastre estes secrets em `Settings > Secrets and variables > Actions` no reposi
 - `CLOUDFLARE_ACCOUNT_ID`: Account ID da conta Cloudflare.
 - `CLOUDFLARE_API_TOKEN`: token com permissao `Account > Workers Scripts > Edit`.
 
+### Envio de e-mail do formulario
+
+O formulario de contato envia para `/api/contact`, endpoint executado pelo Cloudflare Worker em `src/worker.js`.
+O Worker usa a API do Resend, sem expor credenciais no navegador.
+
+Configure estes secrets/variables no Worker `portal-hta`:
+
+- `RESEND_API_KEY`: secret com a chave da API do Resend.
+- `CONTACT_FROM_EMAIL`: remetente validado no Resend, por exemplo `HTA Sistemas <contato@htasistemas.com.br>`.
+- `CONTACT_TO_EMAIL`: destinatario das solicitacoes. Padrao do codigo: `htasistemas@gmail.com`.
+
+Pelo Wrangler, os comandos sao:
+
+```bash
+npx wrangler secret put RESEND_API_KEY
+npx wrangler secret put CONTACT_FROM_EMAIL
+npx wrangler secret put CONTACT_TO_EMAIL
+```
+
+No Resend, valide o dominio usado no `CONTACT_FROM_EMAIL` antes de publicar em producao.
+
 ### Configuracao no Cloudflare
 
 1. O Worker `portal-hta` deve existir em `Workers & Pages`.
