@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/main.css?v=torresoft-20260816-menu-logo-bg">
+    <link rel="stylesheet" href="assets/css/main.css?v=torresoft-20260816-conversao">
     
     <style>
         .contact-header {
@@ -50,7 +50,7 @@
         .contact-form-container {
             background: white;
             padding: 50px;
-            border-radius: 25px;
+            border-radius: 8px;
             box-shadow: 0 30px 60px rgba(0,0,0,0.1);
         }
 
@@ -58,9 +58,54 @@
             background: var(--gradient-primary);
             color: white;
             padding: 50px;
-            border-radius: 25px;
+            border-radius: 8px;
             height: 100%;
             box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
+        }
+
+        .contact-channel-grid {
+            display: grid;
+            gap: 14px;
+            margin: 28px 0 36px;
+        }
+
+        .contact-channel-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .contact-channel-card:hover {
+            background: rgba(255,255,255,0.16);
+            color: white;
+        }
+
+        .contact-channel-card i {
+            font-size: 1.25rem;
+            margin-top: 3px;
+        }
+
+        .contact-channel-card strong,
+        .contact-channel-card span {
+            display: block;
+        }
+
+        .contact-channel-card span {
+            color: rgba(255,255,255,0.76);
+            font-size: 0.9rem;
+        }
+
+        .response-note {
+            padding: 16px;
+            border-radius: 8px;
+            background: rgba(0, 242, 255, 0.12);
+            border: 1px solid rgba(0, 242, 255, 0.28);
+            color: white;
         }
 
         .form-label {
@@ -128,7 +173,7 @@
         }
 
         .map-container {
-            border-radius: 25px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-top: 80px;
@@ -164,8 +209,8 @@
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="portal-cliente.html">Portal</a></li>
                     <li class="nav-item"><a class="nav-link" href="suporte.html">Suporte</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Demonstração</a></li>
-                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="https://intranet.torresoftbrasil.com.br">Intranet</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="contato.html">Agendar demonstração</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://intranet.torresoftbrasil.com.br">Intranet</a></li>
                 </ul>
             </div>
         </div>
@@ -175,7 +220,7 @@
     <header class="contact-header">
         <div class="container" data-aos="fade-up">
             <h1 class="display-4 fw-bold text-white">Fale com a TorreSoft</h1>
-            <p class="lead opacity-75">Nossa equipe de especialistas está pronta para ajudar sua empresa a crescer.</p>
+            <p class="lead opacity-75">Escolha o melhor canal para comercial, suporte, implantação ou parceria.</p>
         </div>
     </header>
 
@@ -185,8 +230,23 @@
                 <!-- Contact Info -->
                 <div class="col-lg-5" data-aos="fade-right">
                     <div class="contact-info-card">
-                        <h2 class="text-white mb-4">Canais Diretos</h2>
-                        <p class="mb-5 opacity-75">Escolha a melhor forma de falar conosco ou preencha o formulário ao lado.</p>
+                        <h2 class="text-white mb-4">Canais diretos</h2>
+                        <p class="mb-0 opacity-75">Fale com a TorreSoft pelo canal mais adequado para sua necessidade.</p>
+
+                        <div class="contact-channel-grid">
+                            <a class="contact-channel-card" href="https://wa.me/5534992693522?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20da%20TorreSoft." target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i>
+                                <div><strong>WhatsApp comercial</strong><span>Resposta rápida para demonstrações e dúvidas iniciais.</span></div>
+                            </a>
+                            <a class="contact-channel-card" href="suporte.html">
+                                <i class="fas fa-headset"></i>
+                                <div><strong>Suporte ao cliente</strong><span>Chamados, orientações técnicas e acompanhamento de atendimento.</span></div>
+                            </a>
+                            <a class="contact-channel-card" href="portal-cliente.html">
+                                <i class="fas fa-user-shield"></i>
+                                <div><strong>Portal do cliente</strong><span>Atalhos para manuais, downloads, suporte e materiais úteis.</span></div>
+                            </a>
+                        </div>
 
                         <div class="info-item">
                             <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
@@ -220,6 +280,11 @@
                             </div>
                         </div>
 
+                        <div class="response-note mt-4">
+                            <strong>Atendimento comercial</strong>
+                            <p class="mb-0 mt-1 small opacity-75">Solicitações recebidas pelo formulário são direcionadas para triagem comercial e retorno pelo canal informado.</p>
+                        </div>
+
                         <div class="social-links-contact">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -232,8 +297,19 @@
                 <!-- Contact Form -->
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="contact-form-container">
-                        <h3 class="mb-4">Solicite uma Demonstração</h3>
+                        <h3 class="mb-4">Solicite uma demonstração</h3>
                         <form id="contactForm" class="row g-4" action="/api/contact" method="post">
+                            <div class="col-md-12">
+                                <label class="form-label">Motivo do contato</label>
+                                <select class="form-select" name="Motivo do contato" required>
+                                    <option value="" selected disabled>Selecione o motivo</option>
+                                    <option>Agendar demonstração</option>
+                                    <option>Solicitar proposta comercial</option>
+                                    <option>Suporte ao cliente</option>
+                                    <option>Implantação ou treinamento</option>
+                                    <option>Parceria</option>
+                                </select>
+                            </div>
                             <div class="col-md-6">
                                 <label class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" name="Nome completo" placeholder="Ex: João Silva" required>

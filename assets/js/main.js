@@ -7,11 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingContact = document.createElement('div');
     floatingContact.className = 'floating-contact';
     floatingContact.innerHTML = `
-        <a class="whatsapp" href="https://wa.me/5534992693522" target="_blank" rel="noopener noreferrer" aria-label="Falar com a TorreSoft pelo WhatsApp">
+        <a class="whatsapp" href="https://wa.me/5534992693522?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20da%20TorreSoft." target="_blank" rel="noopener noreferrer" aria-label="Falar com a TorreSoft pelo WhatsApp">
             <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
         </a>
         <a class="support" href="suporte.html" aria-label="Acessar suporte TorreSoft">
             <i class="fas fa-headset"></i>
+            <span>Suporte</span>
+        </a>
+        <a class="demo" href="contato.html" aria-label="Agendar demonstração TorreSoft">
+            <i class="fas fa-calendar-check"></i>
+            <span>Demonstração</span>
         </a>
     `;
     document.body.appendChild(floatingContact);
