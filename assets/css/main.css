@@ -7,7 +7,7 @@
 
 :root {
     /* Colors */
-    --color-deep-blue: #0A192F;
+    --color-deep-blue: #011139;
     --color-royal-blue: #1E40AF;
     --color-cyan: #00F2FF;
     --color-graphite: #334155;
@@ -486,7 +486,7 @@ a {
     }
 
     .navbar-hta {
-        background: rgba(10, 25, 47, 0.98);
+        background: rgba(1, 17, 57, 0.98);
         padding: 12px 0;
     }
 
