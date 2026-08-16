@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet | TorreSoft Sistemas</title>
     <meta name="description" content="Área interna da TorreSoft Sistemas para consulta de clientes.">
+    <link rel="canonical" href="https://torresoftbrasil.com.br/intranet.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="TorreSoft Sistemas">
+    <meta property="og:title" content="Intranet | TorreSoft Sistemas">
+    <meta property="og:description" content="Área interna da TorreSoft Sistemas para consulta de clientes.">
+    <meta property="og:url" content="https://torresoftbrasil.com.br/intranet.html">
+    <meta property="og:image" content="https://torresoftbrasil.com.br/img/torresoft-titulo-completo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intranet | TorreSoft Sistemas">
+    <meta name="twitter:description" content="Área interna da TorreSoft Sistemas para consulta de clientes.">
+    <meta name="twitter:image" content="https://torresoftbrasil.com.br/img/torresoft-titulo-completo.png">
+    <script type="application/ld+json">{"name":"Intranet | TorreSoft Sistemas","publisher":{"name":"TorreSoft Sistemas","logo":"https://torresoftbrasil.com.br/img/torresoft-titulo-completo.png","contactPoint":{"telephone":"+55-34-99269-3522","areaServed":"BR","contactType":"commercial support","@type":"ContactPoint","availableLanguage":"Portuguese"},"address":{"streetAddress":"Avenida Francisco Galassi, 1085 - Morada da Colina","addressRegion":"MG","addressLocality":"Uberlândia","@type":"PostalAddress","addressCountry":"BR"},"@type":"Organization","url":"https://torresoftbrasil.com.br"},"@context":"https://schema.org","description":"Área interna da TorreSoft Sistemas para consulta de clientes.","@type":"WebPage","url":"https://torresoftbrasil.com.br/intranet.html"}</script>
 
     <link rel="icon" href="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -263,7 +275,7 @@
             <nav class="navbar navbar-expand-lg navbar-hta scrolled">
                 <div class="container">
                     <a class="navbar-brand" href="index.html">
-                        <h2 class="text-white mb-0"><span class="brand-title-lockup"><img src="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" alt="TorreSoft" class="brand-title-logo"></span></h2>
+                        <h2 class="text-white mb-0"><span class="brand-title-lockup"><img height="219" width="323" decoding="async" src="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" alt="TorreSoft" class="brand-title-logo"></span></h2>
                     </a>
                     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <i class="fas fa-bars"></i>
@@ -296,137 +308,17 @@
 
         <section class="intranet-main">
             <div class="container">
-                <div class="login-panel" id="loginPanel">
+                <div class="login-panel">
                     <div class="login-copy">
                         <span class="intranet-badge mb-4">Intranet TorreSoft</span>
-                        <h1>Acesso interno para consulta de clientes.</h1>
-                        <p>Entre com usuário e senha para visualizar a base de clientes, status de atendimento, solução contratada e informações comerciais essenciais.</p>
+                        <h1>Acesso interno protegido.</h1>
+                        <p>Por segurança, a autenticação da intranet não é executada neste site público. O acesso deve ocorrer pelo ambiente protegido da TorreSoft, com controle de identidade, sessão e permissões fora do navegador público.</p>
                     </div>
                     <div class="login-form-wrap">
-                        <h2 class="mb-2">Entrar</h2>
-                        <p class="text-muted mb-4">Use suas credenciais internas.</p>
-                        <p class="login-error" id="loginError">Usuário ou senha inválidos.</p>
-                        <form id="loginForm" novalidate>
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Usuário</label>
-                                <input type="text" class="form-control" id="username" autocomplete="username" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="password" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="password" autocomplete="current-password" required>
-                            </div>
-                            <button type="submit" class="btn-premium w-100">Acessar intranet</button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="dashboard-panel" id="dashboardPanel">
-                    <div class="dashboard-header">
-                        <div>
-                            <small class="text-cyan fw-bold text-uppercase">Área interna</small>
-                            <h1>Clientes TorreSoft Sistemas</h1>
-                        </div>
-                        <button type="button" class="btn-outline-premium text-white border-white px-4 py-2" id="logoutButton">Sair</button>
-                    </div>
-                    <div class="dashboard-body">
-                        <div class="dashboard-metrics">
-                            <div class="metric-card">
-                                <span>8</span>
-                                <small>Clientes listados</small>
-                            </div>
-                            <div class="metric-card">
-                                <span>5</span>
-                                <small>Contratos ativos</small>
-                            </div>
-                            <div class="metric-card">
-                                <span>2</span>
-                                <small>Implantações</small>
-                            </div>
-                            <div class="metric-card">
-                                <span>1</span>
-                                <small>Em suporte</small>
-                            </div>
-                        </div>
-
-                        <div class="table-toolbar">
-                            <div>
-                                <h2 class="h4 mb-1">Base de clientes</h2>
-                                <p class="text-muted mb-0">Consulta rápida por nome, segmento, cidade ou solução.</p>
-                            </div>
-                            <input type="search" class="form-control" id="clientSearch" placeholder="Buscar cliente">
-                        </div>
-
-                        <div class="table-responsive">
-                            <table class="table table-hover client-table">
-                                <thead>
-                                    <tr>
-                                        <th>Cliente</th>
-                                        <th>Segmento</th>
-                                        <th>Cidade/UF</th>
-                                        <th>Solução</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="clientTableBody">
-                                    <tr>
-                                        <td><strong>ADRA Brasil</strong></td>
-                                        <td>Terceiro Setor</td>
-                                        <td>Brasília/DF</td>
-                                        <td>G3N</td>
-                                        <td><span class="status-badge status-active">Ativo</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Prefeitura Municipal de Unaí</strong></td>
-                                        <td>Setor Público</td>
-                                        <td>Unaí/MG</td>
-                                        <td>Gestão Integrada</td>
-                                        <td><span class="status-badge status-active">Ativo</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Prefeitura Municipal de Santa Juliana</strong></td>
-                                        <td>Setor Público</td>
-                                        <td>Santa Juliana/MG</td>
-                                        <td>Financeiro</td>
-                                        <td><span class="status-badge status-implantacao">Implantação</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Prefeitura Municipal de Prata</strong></td>
-                                        <td>Setor Público</td>
-                                        <td>Prata/MG</td>
-                                        <td>Gestão Integrada</td>
-                                        <td><span class="status-badge status-active">Ativo</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Prefeitura Municipal de Paracatu</strong></td>
-                                        <td>Setor Público</td>
-                                        <td>Paracatu/MG</td>
-                                        <td>Financeiro</td>
-                                        <td><span class="status-badge status-suporte">Suporte</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Prefeitura Municipal de Araguari</strong></td>
-                                        <td>Setor Público</td>
-                                        <td>Araguari/MG</td>
-                                        <td>Gestão Integrada</td>
-                                        <td><span class="status-badge status-active">Ativo</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Fagon Contabilidade</strong></td>
-                                        <td>Contabilidade</td>
-                                        <td>Minas Gerais</td>
-                                        <td>Financeiro</td>
-                                        <td><span class="status-badge status-active">Ativo</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Relotec Relógios de Ponto</strong></td>
-                                        <td>Tecnologia</td>
-                                        <td>São Paulo/SP</td>
-                                        <td>Integração</td>
-                                        <td><span class="status-badge status-implantacao">Implantação</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <h2 class="mb-2">Ambiente seguro</h2>
+                        <p class="text-muted mb-4">Use o botão abaixo para abrir a intranet oficial protegida.</p>
+                        <a class="btn-premium w-100 text-center" href="https://intranet.torresoftbrasil.com.br">Acessar intranet segura</a>
+                        <p class="text-muted small mt-4 mb-0">Caso não tenha acesso, solicite liberação ao administrador responsável.</p>
                     </div>
                 </div>
             </div>
@@ -442,64 +334,5 @@
         </div>
     </footer>
 
-    <script>
-        const loginPanel = document.getElementById('loginPanel');
-        const dashboardPanel = document.getElementById('dashboardPanel');
-        const loginForm = document.getElementById('loginForm');
-        const loginError = document.getElementById('loginError');
-        const logoutButton = document.getElementById('logoutButton');
-        const clientSearch = document.getElementById('clientSearch');
-        const clientRows = Array.from(document.querySelectorAll('#clientTableBody tr'));
-        const validCredentials = [
-            { username: 'hta', password: 'clientes2026' },
-            { username: 'arthurmartinstorres@gmail.com', password: 'Admin@123' }
-        ];
-
-        const showDashboard = () => {
-            loginPanel.style.display = 'none';
-            dashboardPanel.style.display = 'block';
-        };
-
-        const showLogin = () => {
-            loginPanel.style.display = 'grid';
-            dashboardPanel.style.display = 'none';
-        };
-
-        if (sessionStorage.getItem('htaIntranetAuth') === 'true') {
-            showDashboard();
-        }
-
-        loginForm.addEventListener('submit', event => {
-            event.preventDefault();
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value;
-
-            const hasValidCredentials = validCredentials.some(credential => (
-                credential.username === username && credential.password === password
-            ));
-
-            if (hasValidCredentials) {
-                sessionStorage.setItem('htaIntranetAuth', 'true');
-                loginError.style.display = 'none';
-                showDashboard();
-                return;
-            }
-
-            loginError.style.display = 'block';
-        });
-
-        logoutButton.addEventListener('click', () => {
-            sessionStorage.removeItem('htaIntranetAuth');
-            showLogin();
-        });
-
-        clientSearch.addEventListener('input', () => {
-            const query = clientSearch.value.trim().toLowerCase();
-
-            clientRows.forEach(row => {
-                row.style.display = row.innerText.toLowerCase().includes(query) ? '' : 'none';
-            });
-        });
-    </script>
 </body>
 </html>

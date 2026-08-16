@@ -4,7 +4,8 @@ const REQUIRED_FIELDS = [
   'Empresa',
   'Cargo',
   'WhatsApp',
-  'Segmento de atuação'
+  'Segmento de atuação',
+  'Solução de interesse'
 ];
 
 const FIELD_LABELS = [
@@ -15,6 +16,9 @@ const FIELD_LABELS = [
   'Telefone fixo',
   'WhatsApp',
   'Segmento de atuação',
+  'Solução de interesse',
+  'Quantidade de usuários',
+  'Melhor horário para contato',
   'Mensagem'
 ];
 
@@ -34,7 +38,7 @@ export default {
       });
     }
 
-    return env.ASSETS.fetch(request);
+    return withSecurityHeaders(await env.ASSETS.fetch(request));
   }
 };
 
@@ -129,11 +133,20 @@ function escapeHtml(value) {
 }
 
 function jsonResponse(body, status = 200, headers = {}) {
-  return new Response(JSON.stringify(body), {
+  return withSecurityHeaders(new Response(JSON.stringify(body), {
     status,
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       ...headers
     }
-  });
+  }));
+}
+
+function withSecurityHeaders(response) {
+  const secured = new Response(response.body, response);
+  secured.headers.set('X-Content-Type-Options', 'nosniff');
+  secured.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  secured.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  secured.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  return secured;
 }
