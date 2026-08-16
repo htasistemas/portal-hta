@@ -1,6 +1,6 @@
 <svg width="238" height="58" viewBox="0 0 238 58" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
-  <title id="logoTitle">HTA Sistemas</title>
-  <desc id="logoDesc">Logomarca moderna da HTA Sistemas com simbolo tecnologico e assinatura horizontal.</desc>
+  <title id="logoTitle">TorreSoft Sistemas</title>
+  <desc id="logoDesc">Logomarca moderna da TorreSoft Sistemas com simbolo tecnologico e assinatura horizontal.</desc>
   <defs>
     <linearGradient id="markGradient" x1="6" y1="6" x2="52" y2="52" gradientUnits="userSpaceOnUse">
       <stop stop-color="#1E40AF"/>
@@ -20,8 +20,8 @@
     <path d="M12.4 18.3L29 8.8L45.6 18.3" stroke="url(#edgeGradient)" stroke-width="1.4" stroke-linecap="round"/>
   </g>
   <g>
-    <text x="68" y="34" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="1.2">HTA</text>
-    <text x="127" y="34" fill="#00F2FF" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="0.4">Sistemas</text>
+    <text x="68" y="34" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-size="23" font-weight="800" letter-spacing="0">TorreSoft</text>
+    <text x="176" y="34" fill="#00F2FF" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="0">Sistemas</text>
     <rect x="70" y="42" width="74" height="3" rx="1.5" fill="url(#markGradient)"/>
     <text x="151" y="46" fill="#B8C7E6" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.2">GESTAO INTELIGENTE</text>
   </g>

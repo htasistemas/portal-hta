@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes & Cases | HTA Sistemas</title>
-    <meta name="description" content="Conheça as empresas e organizações que confiam na HTA Sistemas. Veja nossos cases de sucesso e depoimentos.">
+    <title>Clientes & Cases | TorreSoft Sistemas</title>
+    <meta name="description" content="Conheça as empresas e organizações que confiam na TorreSoft Sistemas. Veja nossos cases de sucesso e depoimentos.">
     
     <!-- Favicon -->
-    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" type="image/png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=torresoft-20260815b">
     
     <style>
         .page-hero {
@@ -38,14 +38,14 @@
 
         .client-logo-card {
             background: white;
-            border-radius: 18px;
+            border-radius: 8px;
             padding: 24px 18px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            min-height: 190px;
+            min-height: 205px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.05);
             transition: var(--transition-smooth);
             border: 1px solid rgba(0,0,0,0.04);
@@ -68,6 +68,34 @@
             color: white;
             letter-spacing: 0;
             box-shadow: inset 0 -12px 24px rgba(0,0,0,0.15);
+        }
+
+        .client-logo-image {
+            width: 150px;
+            height: 102px;
+            border-radius: 8px;
+            background: white;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .client-logo-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .client-logo-text {
+            color: var(--color-deep-blue);
+            font-family: var(--font-primary);
+            font-size: 0.95rem;
+            font-weight: 800;
+            line-height: 1.08;
+            text-align: center;
         }
 
         .brand-blue { background: linear-gradient(135deg, #123a8c, #2d82ff); }
@@ -169,10 +197,10 @@
 <body>
 
     <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-hta fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-hta fixed-top scrolled">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <h2 class="text-white mb-0">HTA<span class="text-cyan">Sistemas</span></h2>
+                <h2 class="text-white mb-0"><span class="brand-title-lockup"><img src="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" alt="TorreSoft" class="brand-title-logo"></span></h2>
             </a>
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i class="fas fa-bars"></i>
@@ -191,10 +219,20 @@
                             <li><a class="dropdown-item" href="pdv.html">Frente de Caixa</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link active" href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://intranet.htasistemas.com.br">Intranet</a></li>
-                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="contato.html">Demonstração</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portal-cliente.html">Portal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="suporte.html">Suporte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Demonstração</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="https://intranet.torresoftbrasil.com.br">Intranet</a></li>
+                </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link " href="portal-cliente.html">Portal</a></li>
+                    <li class="nav-item"><a class="nav-link " href="suporte.html">Suporte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://intranet.torresoftbrasil.com.br">Intranet</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3 " href="contato.html">Demonstração</a></li>
                 </ul>
             </div>
         </div>
@@ -213,85 +251,120 @@
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Quem Confia em Nós</h2>
-                <p>Mais de 500 organizações em todo o Brasil utilizam as soluções HTA</p>
+                <p>Mais de 500 organizações em todo o Brasil utilizam as soluções TorreSoft</p>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-blue">AH</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-araguari.png" alt="Logomarca oficial da Prefeitura Municipal de Araguari"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Atlas Health</strong>
-                            <span>Rede hospitalar</span>
+                            <strong>Prefeitura de Araguari</strong>
+                            <span>Gestão pública municipal</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-green">VN</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-unai.png" alt="Brasão oficial do Município de Unaí"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Vitta Norte</strong>
-                            <span>Hospitais e clínicas</span>
+                            <strong>Prefeitura de Unaí</strong>
+                            <span>Gestão pública municipal</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-purple">OM</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-santa-juliana.png" alt="Brasão oficial da Prefeitura Municipal de Santa Juliana"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Orion Metals</strong>
-                            <span>Indústria e logística</span>
+                            <strong>Prefeitura de Santa Juliana</strong>
+                            <span>Gestão pública municipal</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-orange">SG</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-nova-ponte.png" alt="Logomarca oficial da Prefeitura Municipal de Nova Ponte"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Sol Gaia</strong>
-                            <span>Energia e utilidades</span>
+                            <strong>Prefeitura de Nova Ponte</strong>
+                            <span>Gestão pública municipal</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-red">CP</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-adra.png" alt="Logomarca oficial da ADRA Brasil"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Cedro Partners</strong>
-                            <span>Grupo corporativo</span>
+                            <strong>ADRA</strong>
+                            <span>Organização social</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-slate">GR</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-asa.jpg" alt="Logomarca oficial da ASA Ação Solidária Adventista"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Granrio</strong>
-                            <span>Infraestrutura e serviços</span>
+                            <strong>ASA</strong>
+                            <span>Organização social</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-cyan">NR</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-iasd.svg" alt="Logomarca oficial da Igreja Adventista do Sétimo Dia"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Nexa Retail</strong>
-                            <span>Varejo e distribuição</span>
+                            <strong>IASD</strong>
+                            <span>Instituição religiosa</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
                     <div class="client-logo-card">
-                        <div class="client-logo-mark brand-gold">UB</div>
+                        <div class="client-logo-image"><img src="img/clientes/oficial-prata.png" alt="Logomarca oficial da Prefeitura Municipal do Prata"></div>
                         <div class="client-logo-wordmark">
-                            <strong>Urbana Bank</strong>
-                            <span>Finanças e serviços</span>
+                            <strong>Prefeitura de Prata</strong>
+                            <span>Gestão pública municipal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img src="img/clientes/oficial-carneirinho.png" alt="Logomarca oficial da Prefeitura Municipal de Carneirinho"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>Prefeitura de Carneirinho</strong>
+                            <span>Gestão pública municipal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img src="img/clientes/oficial-santa-vitoria.svg" alt="Logomarca oficial da Prefeitura Municipal de Santa Vitória"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>Prefeitura de Santa Vitória</strong>
+                            <span>Gestão pública municipal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><span class="client-logo-text">Bom Jesus<br>Empreendimentos</span></div>
+                        <div class="client-logo-wordmark">
+                            <strong>Bom Jesus Empreendimentos</strong>
+                            <span>Empreendimentos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img src="img/clientes/oficial-rnp-uberlandia.jpg" alt="Logomarca institucional da RNP+ Uberlândia"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>RNP Uberlândia</strong>
+                            <span>Organização social</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Cases de Sucesso -->
     <section class="section-padding">
         <div class="container">
@@ -385,7 +458,7 @@
                         <div class="mb-3 text-cyan">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="mb-4">"O suporte técnico da HTA é diferenciado. Sempre proativos e resolutivos, nos dão segurança total para operar."</p>
+                        <p class="mb-4">"O suporte técnico da TorreSoft é diferenciado. Sempre proativos e resolutivos, nos dão segurança total para operar."</p>
                         <div class="d-flex align-items-center">
                             <img src="https://i.pravatar.cc/150?u=1" class="rounded-circle me-3" width="50" alt="Avatar">
                             <div>
@@ -434,7 +507,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <h2 class="text-white mb-4">HTA<span class="text-cyan">Sistemas</span></h2>
+                    <h2 class="text-white mb-4"><span class="brand-title-lockup"><img src="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" alt="TorreSoft" class="brand-title-logo"></span></h2>
                     <p class="text-muted">Liderando a transformação digital com inteligência empresarial e compromisso com o resultado.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
@@ -448,6 +521,8 @@
                     <a href="clientes.html" class="footer-link">Clientes</a>
                     <a href="blog.html" class="footer-link">Blog</a>
                     <a href="contato.html" class="footer-link">Contato</a>
+                    <a href="portal-cliente.html" class="footer-link">Portal do Cliente</a>
+                    <a href="suporte.html" class="footer-link">Suporte</a>
                 </div>
                 <div class="col-lg-2">
                     <h6 class="text-white mb-4">Soluções</h6>
@@ -460,13 +535,13 @@
                 <div class="col-lg-4">
                     <h6 class="text-white mb-4">Fale Conosco</h6>
                     <p class="text-muted mb-2"><i class="fas fa-phone-alt me-2 text-cyan"></i> (34) 99269-3522</p>
-                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@htasistemas.com.br</p>
-                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> Uberlândia - MG</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@torresoftbrasil.com.br</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> Avenida Francisco Galassi, 1085 - Morada da Colina, Uberlândia - MG - Brasil</p>
                 </div>
             </div>
             <hr class="my-5 opacity-25">
             <div class="text-center text-muted small">
-                <p>&copy; 2026 HTA Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
+                <p>&copy; 2026 TorreSoft Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
             </div>
         </div>
     </footer>

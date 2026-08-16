@@ -1,5 +1,5 @@
 /* 
-    HTA Sistemas - Design System 
+    TorreSoft Sistemas - Design System 
     Author: Gemini CLI / Senior UX Designer & Front-End Developer
 */
 
@@ -145,15 +145,125 @@ a {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
+.brand-lockup {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+    line-height: 1;
+    vertical-align: middle;
+}
+
 .brand-logo {
     display: block;
-    width: 190px;
-    max-width: 58vw;
-    height: auto;
+    width: 155px;
+    height: 82px;
+    max-width: 42vw;
+    object-fit: contain;
+    background: var(--color-white);
+    border-radius: 6px;
+    padding: 3px 6px;
+    flex: 0 0 auto;
+}
+
+.brand-logo-official {
+    object-position: center;
+}
+
+.brand-title-lockup {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.brand-title-logo {
+    display: block;
+    width: 168px;
+    height: 88px;
+    max-width: 42vw;
+    object-fit: contain;
+    background: var(--color-white);
+    border-radius: 6px;
+    padding: 3px 6px;
+}
+
+.brand-home-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 100%;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.brand-home-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    white-space: nowrap;
+}
+
+.brand-home-name {
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-size: clamp(1.55rem, 2.4vw, 2rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+
+.brand-home-system {
+    color: var(--color-cyan);
+    font-family: var(--font-primary);
+    font-size: clamp(0.78rem, 1.2vw, 1rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+.brand-system-label {
+    display: block;
+    margin-top: -2px;
+    color: var(--color-cyan);
+    font-family: var(--font-primary);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-align: center;
+}
+
+.brand-name {
+    display: inline-block;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    font-weight: 800;
+    line-height: 0.82;
+    letter-spacing: 0;
+    white-space: normal;
+}
+
+.brand-name-accent {
+    color: var(--color-cyan);
 }
 
 .footer-logo {
     width: 220px;
+}
+
+.footer-premium .brand-logo {
+    width: 170px;
+    height: 92px;
+}
+
+.footer-premium .brand-name {
+    font-size: 1.5rem;
 }
 
 .nav-link {
@@ -167,7 +277,37 @@ a {
 .nav-link:hover {
     color: var(--color-cyan) !important;
 }
+.nav-link.btn-premium {
+    padding: 8px 16px;
+    font-size: 0.84rem;
+    line-height: 1.1;
+    min-width: auto;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.22);
+}
 
+.nav-link.btn-premium:hover {
+    transform: translateY(-2px);
+}
+
+.brand-text-main,
+.brand-text-sub {
+    display: block;
+}
+
+.brand-text-main {
+    color: var(--color-white);
+}
+
+.brand-text-sub {
+    color: var(--color-cyan);
+    font-size: 0.56em;
+    line-height: 1;
+    margin-top: 3px;
+}
+
+.brand-name .brand-name-accent {
+    display: none;
+}
 /* Footer Premium */
 .footer-premium {
     background: var(--color-deep-blue);
@@ -191,6 +331,147 @@ a {
     padding-left: 5px;
 }
 
+.floating-contact {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-contact a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    border: 1px solid rgba(255,255,255,0.22);
+}
+
+.floating-contact .whatsapp {
+    background: #25D366;
+}
+
+.floating-contact .support {
+    background: var(--color-royal-blue);
+}
+
+.feature-card {
+    height: 100%;
+    padding: 28px;
+    border-radius: 8px;
+    background: var(--color-white);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+.feature-card i {
+    color: var(--color-royal-blue);
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.proof-strip {
+    background: var(--color-white);
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 34px 0;
+}
+
+.proof-logo {
+    height: 88px;
+    padding: 14px;
+    background: var(--color-white);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proof-logo img {
+    max-height: 62px;
+    width: auto;
+    object-fit: contain;
+}
+
+.product-preview {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #07111f;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
+}
+
+.product-preview-bar {
+    display: flex;
+    gap: 8px;
+    padding: 14px;
+    background: #0f1b2e;
+}
+
+.product-preview-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-cyan);
+    opacity: 0.82;
+}
+
+.product-preview-body {
+    padding: 26px;
+    color: var(--color-white);
+}
+
+.product-metric {
+    padding: 18px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+}
+
+.resource-list {
+    display: grid;
+    gap: 14px;
+}
+
+.resource-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 18px;
+    border-radius: 8px;
+    background: rgba(248, 250, 252, 0.9);
+    color: var(--color-deep-blue);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    font-weight: 700;
+}
+
+.support-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(37, 211, 102, 0.12);
+    color: #0f7b46;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+.support-status::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #25D366;
+}
+
 @media (max-width: 991px) {
     .section-padding {
         padding: 72px 0;
@@ -209,6 +490,38 @@ a {
         padding: 12px 0;
     }
 
+    .brand-logo {
+        width: 132px;
+        height: 72px;
+        max-width: 52vw;
+    }
+
+    .brand-title-logo {
+        width: 132px;
+        height: 72px;
+        max-width: 52vw;
+    }
+
+    .brand-home-lockup {
+        gap: 9px;
+    }
+
+    .brand-home-name {
+        font-size: clamp(1.15rem, 4.1vw, 1.5rem);
+    }
+
+    .brand-home-system {
+        font-size: clamp(0.68rem, 2.6vw, 0.82rem);
+    }
+
+    .brand-system-label {
+        font-size: 0.68rem;
+    }
+
+    .brand-name {
+        font-size: clamp(1.05rem, 4.4vw, 1.35rem);
+    }
+
     .navbar-collapse {
         padding: 16px 0 8px;
     }
@@ -217,12 +530,13 @@ a {
         margin: 4px 0;
         padding: 10px 0;
     }
-
+
     .nav-link.btn-premium {
         margin-top: 10px;
         display: inline-block;
-        padding: 10px 22px;
+        padding: 8px 16px;
     }
+
 
     .footer-premium {
         padding: 60px 0 26px;
@@ -250,5 +564,15 @@ a {
 
     .footer-premium {
         padding: 48px 0 24px;
+    }
+
+    .floating-contact {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .floating-contact a {
+        width: 48px;
+        height: 48px;
     }
 }

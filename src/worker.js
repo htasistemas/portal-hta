@@ -66,8 +66,8 @@ async function handleContact(request, env) {
     return jsonResponse({ error: 'Servidor de e-mail não configurado.' }, 500);
   }
 
-  const to = env.CONTACT_TO_EMAIL || 'htasistemas@gmail.com';
-  const from = env.CONTACT_FROM_EMAIL || 'HTA Sistemas <comercial@htasistemas.com.br>';
+  const to = env.CONTACT_TO_EMAIL || 'comercial@torresoftbrasil.com.br';
+  const from = env.CONTACT_FROM_EMAIL || 'TorreSoft Sistemas <comercial@torresoftbrasil.com.br>';
   const subject = `Solicitação pelo site - ${data.Empresa}`;
   const text = buildTextMessage(data);
   const html = buildHtmlMessage(data);
@@ -116,7 +116,7 @@ function buildHtmlMessage(data) {
     return `<tr><th align="left" style="padding:8px;border-bottom:1px solid #e5e7eb;">${escapeHtml(field)}</th><td style="padding:8px;border-bottom:1px solid #e5e7eb;">${escapeHtml(data[field] || '-')}</td></tr>`;
   }).join('');
 
-  return `<h2>Nova solicitação pelo site HTA Sistemas</h2><table cellspacing="0" cellpadding="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">${rows}</table>`;
+  return `<h2>Nova solicitação pelo site TorreSoft Sistemas</h2><table cellspacing="0" cellpadding="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">${rows}</table>`;
 }
 
 function escapeHtml(value) {

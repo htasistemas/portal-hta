@@ -1,13 +1,13 @@
-# Portal HTA
+# Portal TorreSoft
 
-Site institucional estatico da HTA Sistemas, preparado para deploy no Cloudflare Workers com Static Assets.
+Site institucional estatico da TorreSoft Sistemas, preparado para deploy no Cloudflare Workers com Static Assets.
 
 ## Deploy em producao
 
 O workflow `.github/workflows/static.yml` publica automaticamente no Cloudflare quando houver push na branch `main`.
 
 Worker esperado: `portal-hta`
-Dominio de producao: `https://htasistemas.com.br`
+Dominio de producao: `https://torresoftbrasil.com.br`
 
 ### Secrets no GitHub
 
@@ -24,8 +24,8 @@ O Worker usa a API do Resend, sem expor credenciais no navegador.
 Configure estes secrets/variables no Worker `portal-hta`:
 
 - `RESEND_API_KEY`: secret com a chave da API do Resend.
-- `CONTACT_FROM_EMAIL`: remetente validado no Resend, por exemplo `HTA Sistemas <contato@htasistemas.com.br>`.
-- `CONTACT_TO_EMAIL`: destinatario das solicitacoes. Padrao do codigo: `htasistemas@gmail.com`.
+- `CONTACT_FROM_EMAIL`: remetente validado no Resend, por exemplo `TorreSoft Sistemas <contato@torresoftbrasil.com.br>`.
+- `CONTACT_TO_EMAIL`: destinatario das solicitacoes. Padrao do codigo: `comercial@torresoftbrasil.com.br`.
 
 Pelo Wrangler, os comandos sao:
 
@@ -40,8 +40,8 @@ No Resend, valide o dominio usado no `CONTACT_FROM_EMAIL` antes de publicar em p
 ### Configuracao no Cloudflare
 
 1. O Worker `portal-hta` deve existir em `Workers & Pages`.
-2. Em `Workers & Pages > portal-hta > Domains`, mantenha o custom domain `htasistemas.com.br`.
+2. Em `Workers & Pages > portal-hta > Domains`, mantenha o custom domain `torresoftbrasil.com.br`.
 3. O arquivo `wrangler.toml` aponta os assets publicos para `./dist`.
-4. Mantenha o registro/subdominio `g3n.htasistemas.com.br` apontando para a hospedagem atual do sistema G3. O deploy do portal nao altera esse subdominio.
+4. Mantenha o registro/subdominio `g3n.torresoftbrasil.com.br` apontando para a hospedagem atual do sistema G3. O deploy do portal nao altera esse subdominio.
 
-Depois disso, cada push em `main` atualiza o portal em `https://htasistemas.com.br`.
+Depois disso, cada push em `main` atualiza o portal em `https://torresoftbrasil.com.br`.

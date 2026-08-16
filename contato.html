@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | HTA Sistemas - Soluções em Tecnologia</title>
-    <meta name="description" content="Entre em contato com a HTA Sistemas. Solicite uma demonstração ou tire suas dúvidas com nossos especialistas.">
+    <title>Contato | TorreSoft Sistemas - Soluções em Tecnologia</title>
+    <meta name="description" content="Entre em contato com a TorreSoft Sistemas. Solicite uma demonstração ou tire suas dúvidas com nossos especialistas.">
     
     <!-- Favicon -->
-    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" type="image/png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=torresoft-20260815b">
     
     <style>
         .contact-header {
@@ -129,7 +129,7 @@
     <nav class="navbar navbar-expand-lg navbar-hta fixed-top scrolled">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <h2 class="text-white mb-0">HTA<span class="text-cyan">Sistemas</span></h2>
+                <h2 class="text-white mb-0"><span class="brand-title-lockup"><img src="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" alt="TorreSoft" class="brand-title-logo"></span></h2>
             </a>
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i class="fas fa-bars"></i>
@@ -150,7 +150,17 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://intranet.htasistemas.com.br">Intranet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portal-cliente.html">Portal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="suporte.html">Suporte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Demonstração</a></li>
+                    <li class="nav-item"><a class="nav-link btn-premium ms-lg-3" href="https://intranet.torresoftbrasil.com.br">Intranet</a></li>
+                </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link " href="clientes.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link " href="portal-cliente.html">Portal</a></li>
+                    <li class="nav-item"><a class="nav-link " href="suporte.html">Suporte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://intranet.torresoftbrasil.com.br">Intranet</a></li>
                     <li class="nav-item"><a class="nav-link btn-premium ms-lg-3 active" href="contato.html">Demonstração</a></li>
                 </ul>
             </div>
@@ -160,7 +170,7 @@
     <!-- Page Header -->
     <header class="contact-header">
         <div class="container" data-aos="fade-up">
-            <h1 class="display-4 fw-bold text-white">Fale com a HTA</h1>
+            <h1 class="display-4 fw-bold text-white">Fale com a TorreSoft</h1>
             <p class="lead opacity-75">Nossa equipe de especialistas está pronta para ajudar sua empresa a crescer.</p>
         </div>
     </header>
@@ -194,7 +204,7 @@
                             <div class="info-icon"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <h6 class="mb-1">E-mail Comercial</h6>
-                                <p class="mb-0">comercial@htasistemas.com.br</p>
+                                <p class="mb-0">comercial@torresoftbrasil.com.br</p>
                             </div>
                         </div>
 
@@ -255,6 +265,39 @@
                                     <option>Outros</option>
                                 </select>
                             </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Solução de Interesse</label>
+                                <select class="form-select" name="Solução de interesse" required>
+                                    <option value="" selected disabled>Selecione uma solução</option>
+                                    <option>Gestão para Prefeituras</option>
+                                    <option>G3N / Terceiro Setor</option>
+                                    <option>Financeiro</option>
+                                    <option>Hotelaria</option>
+                                    <option>PDV / Frente de Caixa</option>
+                                    <option>Integrações</option>
+                                    <option>Suporte / Portal do Cliente</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Quantidade de Usuários</label>
+                                <select class="form-select" name="Quantidade de usuários">
+                                    <option value="" selected>Selecione uma faixa</option>
+                                    <option>Até 10 usuários</option>
+                                    <option>11 a 50 usuários</option>
+                                    <option>51 a 150 usuários</option>
+                                    <option>Mais de 150 usuários</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Melhor Horário para Contato</label>
+                                <select class="form-select" name="Melhor horário para contato">
+                                    <option value="" selected>Selecione uma preferência</option>
+                                    <option>Manhã</option>
+                                    <option>Tarde</option>
+                                    <option>Horário comercial</option>
+                                    <option>Prefiro combinar pelo WhatsApp</option>
+                                </select>
+                            </div>
                             <div class="col-md-12">
                                 <label class="form-label">Como podemos ajudar?</label>
                                 <textarea class="form-control" name="Mensagem" rows="4" placeholder="Descreva brevemente sua necessidade..."></textarea>
@@ -286,7 +329,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <h2 class="text-white mb-4">HTA<span class="text-cyan">Sistemas</span></h2>
+                    <h2 class="text-white mb-4"><span class="brand-title-lockup"><img src="img/torresoft-titulo-completo.png?v=titulo-completo-20260815" alt="TorreSoft" class="brand-title-logo"></span></h2>
                     <p class="text-muted">Liderando a transformação digital com inteligência empresarial e compromisso com o resultado.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
@@ -300,6 +343,8 @@
                     <a href="clientes.html" class="footer-link">Clientes</a>
                     <a href="blog.html" class="footer-link">Blog</a>
                     <a href="contato.html" class="footer-link">Contato</a>
+                    <a href="portal-cliente.html" class="footer-link">Portal do Cliente</a>
+                    <a href="suporte.html" class="footer-link">Suporte</a>
                 </div>
                 <div class="col-lg-2">
                     <h6 class="text-white mb-4">Soluções</h6>
@@ -312,13 +357,13 @@
                 <div class="col-lg-4">
                     <h6 class="text-white mb-4">Fale Conosco</h6>
                     <p class="text-muted mb-2"><i class="fas fa-phone-alt me-2 text-cyan"></i> (34) 99269-3522</p>
-                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@htasistemas.com.br</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@torresoftbrasil.com.br</p>
                     <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> Avenida Francisco Galassi, 1085 - Morada da Colina, Uberlândia - MG - Brasil</p>
                 </div>
             </div>
             <hr class="my-5 opacity-25">
             <div class="text-center text-muted small">
-                <p>&copy; 2026 HTA Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
+                <p>&copy; 2026 TorreSoft Sistemas. Todos os direitos reservados. | Privacidade | Termos de Uso</p>
             </div>
         </div>
     </footer>

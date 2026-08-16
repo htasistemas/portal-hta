@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://htasistemas.com.br/sitemap.xml
+Sitemap: https://torresoftbrasil.com.br/sitemap.xml

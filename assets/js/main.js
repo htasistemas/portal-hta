@@ -1,18 +1,32 @@
 /* 
-    HTA Sistemas - Scripts 
+    TorreSoft Sistemas - Scripts 
     Author: Gemini CLI
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+    const floatingContact = document.createElement('div');
+    floatingContact.className = 'floating-contact';
+    floatingContact.innerHTML = `
+        <a class="whatsapp" href="https://wa.me/5534992693522" target="_blank" rel="noopener noreferrer" aria-label="Falar com a TorreSoft pelo WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a class="support" href="suporte.html" aria-label="Acessar suporte TorreSoft">
+            <i class="fas fa-headset"></i>
+        </a>
+    `;
+    document.body.appendChild(floatingContact);
+
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar-hta');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
 
     // Initialize AOS (Animate on Scroll)
     if (typeof AOS !== 'undefined') {
