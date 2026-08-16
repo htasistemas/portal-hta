@@ -139,6 +139,46 @@
             margin-top: 4px;
         }
 
+        .technical-proof-card {
+            height: 100%;
+            padding: 22px;
+            border-radius: 8px;
+            background: white;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .technical-proof-card h4 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .technical-proof-card p {
+            margin: 0;
+            color: var(--color-graphite);
+            font-size: 0.9rem;
+        }
+
+        .technical-proof-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .proof-link-disabled {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.06);
+            color: var(--color-graphite);
+            font-weight: 800;
+            font-size: 0.82rem;
+        }
+
         .case-card {
             background: white;
             border-radius: 20px;
@@ -296,41 +336,14 @@
                 </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
                     <div class="client-logo-card">
-                        <div class="client-logo-image"><img height="319" width="1200" decoding="async" loading="lazy" src="img/clientes/oficial-adra.png" alt="Logomarca oficial da ADRA Brasil"></div>
-                        <div class="client-logo-wordmark">
-                            <strong>ADRA</strong>
-                            <span>Organização social</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="client-logo-card">
-                        <div class="client-logo-image"><img height="800" width="1280" decoding="async" loading="lazy" src="img/clientes/oficial-asa.jpg" alt="Logomarca oficial da ASA Ação Solidária Adventista"></div>
-                        <div class="client-logo-wordmark">
-                            <strong>ASA</strong>
-                            <span>Organização social</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="client-logo-card">
-                        <div class="client-logo-image"><img height="104" width="168" decoding="async" loading="lazy" src="img/clientes/oficial-iasd.svg" alt="Logomarca oficial da Igreja Adventista do Sétimo Dia"></div>
-                        <div class="client-logo-wordmark">
-                            <strong>IASD</strong>
-                            <span>Instituição religiosa</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="client-logo-card">
-                        <div class="client-logo-image"><img height="110" width="320" decoding="async" loading="lazy" src="img/clientes/oficial-prata.png" alt="Logomarca oficial da Prefeitura Municipal do Prata"></div>
+                        <div class="client-logo-image"><img height="475" width="526" decoding="async" loading="lazy" src="img/clientes/oficial-prata.png?v=brasao-colorido-20260816" alt="Brasão oficial da Prefeitura Municipal do Prata"></div>
                         <div class="client-logo-wordmark">
                             <strong>Prefeitura de Prata</strong>
                             <span>Gestão pública municipal</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
                     <div class="client-logo-card">
                         <div class="client-logo-image"><img height="104" width="283" decoding="async" loading="lazy" src="img/clientes/oficial-carneirinho.png" alt="Logomarca oficial da Prefeitura Municipal de Carneirinho"></div>
                         <div class="client-logo-wordmark">
@@ -339,7 +352,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
                         <div class="client-logo-image"><img height="142" width="406" decoding="async" loading="lazy" src="img/clientes/oficial-santa-vitoria.svg" alt="Logomarca oficial da Prefeitura Municipal de Santa Vitória"></div>
                         <div class="client-logo-wordmark">
@@ -348,7 +361,52 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img height="461" width="1536" decoding="async" loading="lazy" src="img/clientes/oficial-uberaba.png" alt="Logomarca oficial da Prefeitura Municipal de Uberaba"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>Prefeitura de Uberaba</strong>
+                            <span>Gestão pública municipal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img height="84" width="291" decoding="async" loading="lazy" src="img/clientes/oficial-camara-uberlandia.png" alt="Logomarca oficial da Câmara Municipal de Uberlândia"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>Câmara de Uberlândia</strong>
+                            <span>Poder legislativo municipal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img height="319" width="1200" decoding="async" loading="lazy" src="img/clientes/oficial-adra.png" alt="Logomarca oficial da ADRA Brasil"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>ADRA</strong>
+                            <span>Organização social</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img height="600" width="600" decoding="async" loading="lazy" src="img/clientes/oficial-asa.png" alt="Logomarca oficial da ASA Ação Solidária Adventista"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>ASA</strong>
+                            <span>Organização social</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="client-logo-card">
+                        <div class="client-logo-image"><img height="104" width="168" decoding="async" loading="lazy" src="img/clientes/oficial-iasd.svg" alt="Logomarca oficial da Igreja Adventista do Sétimo Dia"></div>
+                        <div class="client-logo-wordmark">
+                            <strong>IASD</strong>
+                            <span>Instituição religiosa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
                     <div class="client-logo-card">
                         <div class="client-logo-image"><span class="client-logo-text">Bom Jesus<br>Empreendimentos</span></div>
                         <div class="client-logo-wordmark">
@@ -357,9 +415,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+                <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
                     <div class="client-logo-card">
-                        <div class="client-logo-image"><img height="237" width="1280" decoding="async" loading="lazy" src="img/clientes/oficial-rnp-uberlandia.jpg" alt="Logomarca institucional da RNP+ Uberlândia"></div>
+                        <div class="client-logo-image"><img height="420" width="420" decoding="async" loading="lazy" src="img/clientes/oficial-rnp-uberlandia.png?v=rnp-correta-20260816" alt="Logomarca institucional da RNP"></div>
                         <div class="client-logo-wordmark">
                             <strong>RNP Uberlândia</strong>
                             <span>Organização social</span>
@@ -369,8 +427,64 @@
             </div>
         </div>
     </section>
-    <!-- Cases de Sucesso -->
+
     <section class="section-padding">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Comprovação técnica</h2>
+                <p>Termos de capacidade técnica publicados para consulta e validação institucional.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="technical-proof-card">
+                        <h4>Prefeitura de Prata</h4>
+                        <p>Arquivo esperado: <strong>docs/capacidade-tecnica/prefeitura-prata.pdf</strong></p>
+                        <div class="technical-proof-actions">
+                            <a class="btn-outline-premium" href="docs/capacidade-tecnica/prefeitura-prata.pdf">Abrir termo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="technical-proof-card">
+                        <h4>Prefeitura de Uberaba</h4>
+                        <p>Arquivo esperado: <strong>docs/capacidade-tecnica/prefeitura-uberaba.pdf</strong></p>
+                        <div class="technical-proof-actions">
+                            <a class="btn-outline-premium" href="docs/capacidade-tecnica/prefeitura-uberaba.pdf">Abrir termo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="technical-proof-card">
+                        <h4>Câmara de Uberlândia</h4>
+                        <p>Arquivo esperado: <strong>docs/capacidade-tecnica/camara-uberlandia.pdf</strong></p>
+                        <div class="technical-proof-actions">
+                            <a class="btn-outline-premium" href="docs/capacidade-tecnica/camara-uberlandia.pdf">Abrir termo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="technical-proof-card">
+                        <h4>Prefeitura de Santa Vitória</h4>
+                        <p>Arquivo esperado: <strong>docs/capacidade-tecnica/prefeitura-santa-vitoria.pdf</strong></p>
+                        <div class="technical-proof-actions">
+                            <a class="btn-outline-premium" href="docs/capacidade-tecnica/prefeitura-santa-vitoria.pdf">Abrir termo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="technical-proof-card">
+                        <h4>Outros clientes</h4>
+                        <p>Novos termos podem ser adicionados na mesma pasta e vinculados aqui.</p>
+                        <div class="technical-proof-actions">
+                            <span class="proof-link-disabled">Aguardando arquivo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cases de Sucesso -->
+    <section class="section-padding bg-light">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
                 <h2>Cases de Sucesso</h2>
