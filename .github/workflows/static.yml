@@ -1,4 +1,4 @@
-name: Deploy portal to Cloudflare Workers
+name: Deploy portal TorreSoft
 
 on:
   push:
@@ -7,10 +7,9 @@ on:
 
 permissions:
   contents: read
-  deployments: write
 
 concurrency:
-  group: cloudflare-workers-production
+  group: torresoft-production
   cancel-in-progress: true
 
 jobs:
@@ -20,15 +19,55 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare static site
+      - name: Prepare deploy package
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          CONTACT_FROM_EMAIL: ${{ secrets.CONTACT_FROM_EMAIL }}
+          CONTACT_TO_EMAIL: ${{ secrets.CONTACT_TO_EMAIL }}
         run: |
           mkdir -p dist
-          cp *.html robots.txt sitemap.xml _redirects dist/
+          cp *.html robots.txt sitemap.xml .htaccess dist/
           cp -R assets dist/assets
           cp -R img dist/img
+          cp -R api dist/api
+          rm -f dist/api/contact.config.example.php
+          node <<'NODE'
+          const fs = require('fs');
+          const escapePhp = (value) => String(value || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+          const config = {
+            RESEND_API_KEY: process.env.RESEND_API_KEY,
+            CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL || 'TorreSoft Sistemas <comercial@torresoftbrasil.com.br>',
+            CONTACT_TO_EMAIL: process.env.CONTACT_TO_EMAIL || 'comercial@torresoftbrasil.com.br',
+          };
 
-      - name: Deploy to Cloudflare Workers
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: npx wrangler deploy --config wrangler.toml
+          fs.writeFileSync('dist/api/contact.config.php', `<?php
+
+          return [
+              'RESEND_API_KEY' => '${escapePhp(config.RESEND_API_KEY)}',
+              'CONTACT_FROM_EMAIL' => '${escapePhp(config.CONTACT_FROM_EMAIL)}',
+              'CONTACT_TO_EMAIL' => '${escapePhp(config.CONTACT_TO_EMAIL)}',
+          ];
+          `);
+          NODE
+
+      - name: Upload to torresoftbrasil.com.br
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.TORRESOFT_SSH_HOST }}
+          username: ${{ secrets.TORRESOFT_SSH_USERNAME }}
+          password: ${{ secrets.TORRESOFT_SSH_PASSWORD }}
+          source: "dist/*,dist/.htaccess"
+          target: "/var/www/portal-torresoft"
+          strip_components: 1
+
+      - name: Fix permissions
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.TORRESOFT_SSH_HOST }}
+          username: ${{ secrets.TORRESOFT_SSH_USERNAME }}
+          password: ${{ secrets.TORRESOFT_SSH_PASSWORD }}
+          script: |
+            chown -R www-data:www-data /var/www/portal-torresoft
+            find /var/www/portal-torresoft -type d -exec chmod 755 {} \;
+            find /var/www/portal-torresoft -type f -exec chmod 644 {} \;
+            nginx -t

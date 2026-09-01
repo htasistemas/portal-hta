@@ -1,47 +1,67 @@
-# Portal TorreSoft
+# Portal HTA / TorreSoft
 
-Site institucional estatico da TorreSoft Sistemas, preparado para deploy no Cloudflare Workers com Static Assets.
+Site institucional preparado para hospedagem no VPS da Hostinger usando os dominios:
 
-## Deploy em producao
+- `torresoftbrasil.com.br`
+- `www.torresoftbrasil.com.br`
 
-O workflow `.github/workflows/static.yml` publica automaticamente no Cloudflare quando houver push na branch `main`.
+O dominio principal para SEO e sitemap e `https://torresoftbrasil.com.br`.
 
-Worker esperado: `portal-hta`
-Dominio de producao: `https://torresoftbrasil.com.br`
+## Deploy no VPS Hostinger
 
-### Secrets no GitHub
+O workflow `.github/workflows/static.yml` publica automaticamente quando houver push na branch `main`.
 
-Cadastre estes secrets em `Settings > Secrets and variables > Actions` no repositorio GitHub:
+Ele monta a pasta `dist/` com:
 
-- `CLOUDFLARE_ACCOUNT_ID`: Account ID da conta Cloudflare.
-- `CLOUDFLARE_API_TOKEN`: token com permissao `Account > Workers Scripts > Edit`.
+- paginas HTML;
+- `assets/`;
+- `img/`;
+- `.htaccess`;
+- `api/contact.php`;
+- `api/contact.config.php` gerado a partir dos secrets do GitHub.
 
-### Envio de e-mail do formulario
+## Dados necessarios para subir no VPS
 
-O formulario de contato envia para `/api/contact`, endpoint executado pelo Cloudflare Worker em `src/worker.js`.
-O Worker usa a API do Resend, sem expor credenciais no navegador.
+### 1. Acesso/DNS dos dominios
 
-Configure estes secrets/variables no Worker `portal-hta`:
+E preciso confirmar onde o DNS do dominio esta gerenciado e apontar ambos para o VPS:
 
-- `RESEND_API_KEY`: secret com a chave da API do Resend.
-- `CONTACT_FROM_EMAIL`: remetente validado no Resend, por exemplo `TorreSoft Sistemas <contato@torresoftbrasil.com.br>`.
-- `CONTACT_TO_EMAIL`: destinatario das solicitacoes. Padrao do codigo: `comercial@torresoftbrasil.com.br`.
+- `torresoftbrasil.com.br`
+- `www.torresoftbrasil.com.br`
 
-Pelo Wrangler, os comandos sao:
+O dominio `htasistemas.com.br` nao faz parte deste deploy e nao deve ser alterado.
 
-```bash
-npx wrangler secret put RESEND_API_KEY
-npx wrangler secret put CONTACT_FROM_EMAIL
-npx wrangler secret put CONTACT_TO_EMAIL
-```
+### 2. Pasta publica do dominio
 
-No Resend, valide o dominio usado no `CONTACT_FROM_EMAIL` antes de publicar em producao.
+O Nginx do VPS aponta o portal para:
 
-### Configuracao no Cloudflare
+- `/var/www/portal-torresoft`
 
-1. O Worker `portal-hta` deve existir em `Workers & Pages`.
-2. Em `Workers & Pages > portal-hta > Domains`, mantenha o custom domain `torresoftbrasil.com.br`.
-3. O arquivo `wrangler.toml` aponta os assets publicos para `./dist`.
-4. Mantenha o registro/subdominio `g3n.torresoftbrasil.com.br` apontando para a hospedagem atual do sistema G3. O deploy do portal nao altera esse subdominio.
+Configure apenas a pasta publica do `torresoftbrasil.com.br`.
 
-Depois disso, cada push em `main` atualiza o portal em `https://torresoftbrasil.com.br`.
+### 3. Credenciais SSH
+
+No GitHub, cadastre em `Settings > Secrets and variables > Actions`:
+
+- `TORRESOFT_SSH_HOST`: IP ou host do VPS.
+- `TORRESOFT_SSH_USERNAME`: usuario SSH.
+- `TORRESOFT_SSH_PASSWORD`: senha SSH.
+
+### 4. E-mail do formulario de contato
+
+O formulario envia para `/api/contact`, executado em PHP na Hostinger, usando a API do Resend.
+
+Cadastre tambem estes secrets no GitHub:
+
+- `RESEND_API_KEY`: chave da API do Resend.
+- `CONTACT_FROM_EMAIL`: remetente validado no Resend, por exemplo `TorreSoft Sistemas <comercial@torresoftbrasil.com.br>`.
+- `CONTACT_TO_EMAIL`: destinatario das solicitacoes, por exemplo `comercial@torresoftbrasil.com.br`.
+
+O dominio usado no `CONTACT_FROM_EMAIL` precisa estar validado no Resend antes da publicacao em producao.
+
+## Observacoes
+
+- O arquivo `api/contact.config.php` nao deve ser versionado no Git.
+- O arquivo `.htaccess` faz `/api/contact` chamar `api/contact.php`.
+- O subdominio do sistema G3, como `g3n.torresoftbrasil.com.br`, deve continuar apontando para a hospedagem atual dele. O deploy deste portal nao deve sobrescrever esse subdominio.
+- O dominio `htasistemas.com.br` esta fora do escopo deste deploy.

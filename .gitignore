@@ -26,5 +26,8 @@ bin/
 ### VS Code ###
 .vscode/
 
+### Local secrets ###
+/api/contact.config.php
+
 ### Mac OS ###
 .DS_Store
