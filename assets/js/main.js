@@ -22,6 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.body.appendChild(floatingContact);
 
+    // Eventos compatíveis com GA4/GTM já instalados pelo proprietário do site.
+    // Sem dataLayer, não carrega nem envia nenhum serviço de terceiros.
+    const trackConversion = (eventName, params = {}) => {
+        if (Array.isArray(window.dataLayer)) {
+            window.dataLayer.push({ event: eventName, ...params });
+        }
+    };
+
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest('a');
+        if (!link) return;
+        if (link.dataset.conversion) trackConversion(link.dataset.conversion, { link_url: link.href });
+        if (link.href.includes('wa.me')) trackConversion('clique_whatsapp', { link_url: link.href });
+        if (link.href.includes('/terceiro-setor.html') || link.href.includes('g3n.torresoftbrasil.com.br')) {
+            trackConversion('conhecer_g3n', { link_url: link.href });
+        }
+    });
+
+    document.addEventListener('submit', (event) => {
+        if (event.target.matches('form[action*="/api/contact"]')) trackConversion('envio_formulario_comercial');
+    });
+
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar-hta');
     if (navbar) {
@@ -68,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Continuous counters
-    const counters = document.querySelectorAll('.counter');
+    const counters = document.querySelectorAll('.counter[data-target]');
     const counterTimers = new Map();
 
     const startCounter = () => {

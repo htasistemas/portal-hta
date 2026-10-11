@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Caminhos operacionais que não são páginas comerciais indexáveis.
+Disallow: /api/
+Disallow: /src/
+Disallow: /intranet.html
+
 Sitemap: https://torresoftbrasil.com.br/sitemap.xml
