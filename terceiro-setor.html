@@ -17,7 +17,7 @@
     <meta name="twitter:description" content="Conheça o G3N, sistema para gestão de ONGs, OSCs e instituições sociais. Organize projetos, convênios, financeiro, pessoas e prestação de contas.">
     <meta name="twitter:image" content="https://torresoftbrasil.com.br/img/torresoft-logo-azul-20260816.png">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://torresoftbrasil.com.br/#organization","name":"TorreSoft Brasil","url":"https://torresoftbrasil.com.br/","logo":"https://torresoftbrasil.com.br/img/torresoft-logo-azul-20260816.png","telephone":"+55-34-99269-3522","email":"comercial@torresoftbrasil.com.br"},{"@type":"SoftwareApplication","@id":"https://torresoftbrasil.com.br/terceiro-setor.html#software","name":"G3N","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://g3n.torresoftbrasil.com.br/","description":"Sistema de gestão para organizações do terceiro setor, com módulos administrativos, financeiros, de pessoas, projetos, convênios, captação, prestação de contas e transparência."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://torresoftbrasil.com.br/"},{"@type":"ListItem","position":2,"name":"Terceiro Setor","item":"https://torresoftbrasil.com.br/terceiro-setor.html"}]},{"@type":"WebPage","@id":"https://torresoftbrasil.com.br/terceiro-setor.html#webpage","url":"https://torresoftbrasil.com.br/terceiro-setor.html","name":"Sistema de Gestão para ONGs e OSCs | G3N TorreSoft","about":{"@id":"https://torresoftbrasil.com.br/terceiro-setor.html#software"},"inLanguage":"pt-BR"}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://torresoftbrasil.com.br/#organization","name":"TorreSoft Brasil","url":"https://torresoftbrasil.com.br/","logo":"https://torresoftbrasil.com.br/img/torresoft-logo-azul-20260816.png","telephone":"+55-34-99269-3522","email":"comercial@torresoftbrasil.com.br"},{"@type":"SoftwareApplication","@id":"https://torresoftbrasil.com.br/terceiro-setor.html#software","name":"G3N","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://g3n.torresoftbrasil.com.br/","description":"Sistema de gestão para organizações do terceiro setor, com painel de indicadores, cadastros, atendimentos, gestão administrativa, finanças, educação, portais, recursos humanos, auditoria e governança."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://torresoftbrasil.com.br/"},{"@type":"ListItem","position":2,"name":"Terceiro Setor","item":"https://torresoftbrasil.com.br/terceiro-setor.html"}]},{"@type":"WebPage","@id":"https://torresoftbrasil.com.br/terceiro-setor.html#webpage","url":"https://torresoftbrasil.com.br/terceiro-setor.html","name":"Sistema de Gestão para ONGs e OSCs | G3N TorreSoft","about":{"@id":"https://torresoftbrasil.com.br/terceiro-setor.html#software"},"inLanguage":"pt-BR"}]}
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Para quem o G3N foi desenvolvido?","acceptedAnswer":{"@type":"Answer","text":"Para organizações do terceiro setor, como ONGs, OSCs, fundações e instituições sociais que precisam organizar sua gestão."}},{"@type":"Question","name":"Quais áreas podem ser organizadas?","acceptedAnswer":{"@type":"Answer","text":"O G3N apresenta módulos administrativos, financeiros, de pessoas, patrimônio, convênios, projetos, captação, prestação de contas, transparência e indicadores."}},{"@type":"Question","name":"Quais são os planos do G3N?","acceptedAnswer":{"@type":"Answer","text":"O G3N possui os planos Essencial, Profissional, Premium e Enterprise. Os recursos, condições comerciais e disponibilidade devem ser confirmados com a equipe comercial."}},{"@type":"Question","name":"Como solicitar uma demonstração?","acceptedAnswer":{"@type":"Answer","text":"Acesse a página de contato e envie o formulário comercial ou fale diretamente com a TorreSoft pelo WhatsApp."}}]}
@@ -103,6 +103,35 @@
             color: var(--color-royal-blue);
             margin-bottom: 20px;
         }
+
+        .g3n-demo-shell {
+            background: #0b1730;
+            border-radius: 24px;
+            padding: clamp(18px, 3vw, 32px);
+            box-shadow: 0 20px 55px rgba(10, 25, 47, .18);
+            color: #fff;
+        }
+
+        .g3n-demo-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+        .g3n-demo-topbar small { color: rgba(255,255,255,.65); }
+        .g3n-demo-dots { display: flex; gap: 6px; }
+        .g3n-demo-dots span { width: 9px; height: 9px; border-radius: 50%; background: #00f2ff; display: block; }
+        .g3n-demo-dots span:nth-child(2) { background: #5d78ff; }
+        .g3n-demo-dots span:nth-child(3) { background: #8b9bbd; }
+        .g3n-demo-sidebar { background: rgba(255,255,255,.06); border-radius: 14px; padding: 14px; height: 100%; }
+        .g3n-demo-sidebar span { display: block; font-size: .76rem; color: rgba(255,255,255,.72); padding: 8px 4px; }
+        .g3n-demo-sidebar span.active { color: #00f2ff; font-weight: 700; }
+        .g3n-demo-card { background: #fff; color: #0b1730; border-radius: 14px; padding: 16px; height: 100%; }
+        .g3n-demo-card small { color: #64748b; }
+        .g3n-demo-value { font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 800; margin: 7px 0 0; }
+        .g3n-demo-chart { display: flex; align-items: end; gap: 10px; height: 130px; padding-top: 15px; }
+        .g3n-demo-bar { flex: 1; background: linear-gradient(180deg, #00cbd8, #3157d5); border-radius: 7px 7px 2px 2px; min-height: 18px; }
+        .g3n-demo-table { width: 100%; font-size: .78rem; border-collapse: collapse; }
+        .g3n-demo-table th, .g3n-demo-table td { padding: 9px 4px; border-bottom: 1px solid #e5eaf2; text-align: left; }
+        .g3n-demo-badge { display: inline-block; border-radius: 99px; padding: 3px 8px; font-size: .7rem; font-weight: 700; background: #dff8f8; color: #08757b; }
+        .g3n-demo-badge.warning { background: #fff1d6; color: #946200; }
+        .g3n-demo-progress { height: 9px; border-radius: 99px; background: #e8edf5; overflow: hidden; }
+        .g3n-demo-progress span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #3157d5, #00cbd8); }
     </style>
 </head>
 <body>
@@ -123,11 +152,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="solucoes.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Soluções</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="terceiro-setor.html">Terceiro Setor</a></li>
-                            <li><a class="dropdown-item" href="hotelaria.html">Hotelaria</a></li>
-                            <li><a class="dropdown-item" href="financeiro.html">Financeiro</a></li>
-                            <li><a class="dropdown-item" href="integradora.html">Integração</a></li>
-                            <li><a class="dropdown-item" href="pdv.html">Frente de Caixa</a></li>
+                            <li><a class="dropdown-item" href="terceiro-setor.html">G3 - Terceiro Setor</a></li>
+                            <li><a class="dropdown-item" href="hotelaria.html">HotelWeb</a></li>
+                            <li><a class="dropdown-item" href="financeiro.html">Finance Pro Master</a></li>
+                            <li><a class="dropdown-item" href="integradora.html">Integra Lab</a></li>
+                            <li><a class="dropdown-item" href="pdv.html">Vapt Frente de caixa</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="clientes.html">Clientes</a></li>
@@ -170,6 +199,119 @@
                         <div class="d-flex align-items-start mb-3"><i class="fas fa-check-circle text-cyan me-3 fs-4"></i><p class="mb-0">Recursos financeiros, orçamento e patrimônio.</p></div>
                         <div class="d-flex align-items-start mb-3"><i class="fas fa-check-circle text-cyan me-3 fs-4"></i><p class="mb-0">Pessoas, voluntariado, projetos e convênios.</p></div>
                         <div class="d-flex align-items-start"><i class="fas fa-check-circle text-cyan me-3 fs-4"></i><p class="mb-0">Relatórios, prestação de contas e transparência.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principais telas e funções do G3N -->
+    <section class="section-padding bg-light" id="telas-e-funcoes-g3n">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <span class="small text-cyan fw-bold text-uppercase">Por dentro do sistema</span>
+                <h2>Veja como o G3N organiza a rotina da instituição</h2>
+                <p>As telas abaixo mostram, de forma simples, onde cada equipe encontra as principais funções do G3N.</p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="ts-feature-card h-100">
+                        <div class="impact-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="h4">1. Comece pelo painel</h3>
+                        <p><strong>Painel de indicadores:</strong> acompanhe a visão geral da operação e consulte os principais indicadores para orientar decisões.</p>
+                        <p class="mb-0"><strong>Buscar tela no menu:</strong> encontre rapidamente uma função pelo nome, sem percorrer todo o sistema.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="ts-feature-card h-100">
+                        <div class="impact-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="h4">2. Organize as pessoas</h3>
+                        <p><strong>Cadastros em geral:</strong> mantenha informações institucionais, beneficiários, famílias, profissionais, voluntários, unidades e serviços organizados.</p>
+                        <p class="mb-0"><strong>Recursos humanos:</strong> concentre as rotinas de equipe e os dados relacionados às pessoas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="ts-feature-card h-100">
+                        <div class="impact-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3 class="h4">3. Registre os atendimentos</h3>
+                        <p><strong>Atendimentos diários:</strong> registre a rotina de atendimento, consulte a evolução e mantenha o histórico das pessoas acompanhadas.</p>
+                        <p class="mb-0"><strong>Central do terceiro setor:</strong> reúna as funções assistenciais e os processos específicos da instituição.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-building-columns"></i></div><h3 class="h5">Administração e gestão</h3><p class="small mb-0">Acompanhe processos administrativos e a organização da operação institucional.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-calculator"></i></div><h3 class="h5">Contabilidade e finanças</h3><p class="small mb-0">Consulte contas, movimentações, relatórios financeiros e informações para prestação de contas.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-cash-register"></i></div><h3 class="h5">Vendas e Caixa</h3><p class="small mb-0">Acesse as rotinas de vendas, caixa e Frente de Caixa quando liberadas para o plano da instituição.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-graduation-cap"></i></div><h3 class="h5">Gestão educacional</h3><p class="small mb-0">Organize as funções educacionais disponíveis para instituições que utilizam esse módulo.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-scale-balanced"></i></div><h3 class="h5">Jurídico e Compliance</h3><p class="small mb-0">Apoie controles jurídicos, conformidade, auditoria e governança conforme o plano contratado.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-globe"></i></div><h3 class="h5">Portais de acesso</h3><p class="small mb-0">Disponibilize os portais e canais de acesso previstos para a operação da instituição.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-sliders"></i></div><h3 class="h5">Configurações gerais</h3><p class="small mb-0">Ajuste mensagens, perfis, permissões, usuários, datas comemorativas e parâmetros do sistema.</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="ts-feature-card h-100"><div class="impact-icon"><i class="fas fa-shield-halved"></i></div><h3 class="h5">Auditoria e governança</h3><p class="small mb-0">Use auditoria, logs, backup, restauração, chamados, manuais e informações da licença para dar mais controle à gestão.</p></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <p class="text-muted">A liberação de módulos depende do plano e da configuração contratada para cada instituição.</p>
+                <a href="contato.html" class="btn-premium" data-conversion="solicitar_demonstracao">Ver o G3N em uma demonstração</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exemplos visuais das telas -->
+    <section class="section-padding" id="exemplos-visuais-g3n">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <span class="small text-cyan fw-bold text-uppercase">Exemplos de uso</span>
+                <h2>Veja o G3N em uma rotina real de gestão</h2>
+                <p>Os exemplos abaixo simulam a organização das informações dentro do sistema. Os números são ilustrativos e não representam resultados de clientes.</p>
+            </div>
+
+            <ul class="nav nav-pills justify-content-center gap-2 mb-4" id="g3nDemoTabs" role="tablist">
+                <li class="nav-item" role="presentation"><button class="nav-link active" id="painel-tab" data-bs-toggle="pill" data-bs-target="#painel-demo" type="button" role="tab" aria-controls="painel-demo" aria-selected="true">Painel de indicadores</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="atendimento-tab" data-bs-toggle="pill" data-bs-target="#atendimento-demo" type="button" role="tab" aria-controls="atendimento-demo" aria-selected="false">Atendimentos diários</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="gestao-tab" data-bs-toggle="pill" data-bs-target="#gestao-demo" type="button" role="tab" aria-controls="gestao-demo" aria-selected="false">Gestão e finanças</button></li>
+            </ul>
+
+            <div class="tab-content" id="g3nDemoTabsContent">
+                <div class="tab-pane fade show active" id="painel-demo" role="tabpanel" aria-labelledby="painel-tab" tabindex="0">
+                    <div class="g3n-demo-shell">
+                        <div class="g3n-demo-topbar"><div><strong>G3N Next</strong><small class="d-block">Painel de indicadores · exemplo ilustrativo</small></div><div class="g3n-demo-dots"><span></span><span></span><span></span></div></div>
+                        <div class="row g-3">
+                            <div class="col-lg-2"><div class="g3n-demo-sidebar"><span class="active"><i class="fas fa-chart-line me-2"></i>Indicadores</span><span><i class="fas fa-users me-2"></i>Cadastros</span><span><i class="fas fa-hand-holding-heart me-2"></i>Atendimentos</span><span><i class="fas fa-coins me-2"></i>Finanças</span><span><i class="fas fa-sliders me-2"></i>Configurações</span></div></div>
+                            <div class="col-lg-10"><div class="row g-3"><div class="col-md-4"><div class="g3n-demo-card"><small>Atendimentos no período</small><p class="g3n-demo-value">128</p><span class="g3n-demo-badge">exemplo</span></div></div><div class="col-md-4"><div class="g3n-demo-card"><small>Projetos acompanhados</small><p class="g3n-demo-value">12</p><span class="g3n-demo-badge">exemplo</span></div></div><div class="col-md-4"><div class="g3n-demo-card"><small>Documentos pendentes</small><p class="g3n-demo-value">07</p><span class="g3n-demo-badge warning">atenção</span></div></div><div class="col-md-7"><div class="g3n-demo-card"><small>Atendimentos por período</small><div class="g3n-demo-chart"><span class="g3n-demo-bar" style="height:42%"></span><span class="g3n-demo-bar" style="height:66%"></span><span class="g3n-demo-bar" style="height:54%"></span><span class="g3n-demo-bar" style="height:83%"></span><span class="g3n-demo-bar" style="height:72%"></span><span class="g3n-demo-bar" style="height:92%"></span></div><div class="d-flex justify-content-between text-muted small"><span>Jan</span><span>Fev</span><span>Mar</span><span>Abr</span><span>Mai</span><span>Jun</span></div></div></div><div class="col-md-5"><div class="g3n-demo-card"><small>Projetos por andamento</small><div class="mt-3"><div class="d-flex justify-content-between small"><span>Em execução</span><strong>70%</strong></div><div class="g3n-demo-progress my-2"><span style="width:70%"></span></div><div class="d-flex justify-content-between small"><span>Planejamento</span><strong>45%</strong></div><div class="g3n-demo-progress my-2"><span style="width:45%"></span></div><div class="d-flex justify-content-between small"><span>Encerramento</span><strong>25%</strong></div><div class="g3n-demo-progress mt-2"><span style="width:25%"></span></div></div></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="atendimento-demo" role="tabpanel" aria-labelledby="atendimento-tab" tabindex="0">
+                    <div class="g3n-demo-shell">
+                        <div class="g3n-demo-topbar"><div><strong>Atendimentos diários</strong><small class="d-block">Exemplo de acompanhamento assistencial</small></div><span class="g3n-demo-badge">rotina da equipe</span></div>
+                        <div class="row g-3"><div class="col-lg-8"><div class="g3n-demo-card"><div class="d-flex justify-content-between align-items-center mb-3"><div><h3 class="h5 mb-1">Agenda de atendimentos</h3><small>Histórico, evolução e encaminhamentos em um só lugar.</small></div><button class="btn btn-sm btn-primary" type="button">Novo atendimento</button></div><div class="table-responsive"><table class="g3n-demo-table"><thead><tr><th>Horário</th><th>Atendido</th><th>Serviço</th><th>Status</th></tr></thead><tbody><tr><td>08:30</td><td>Família Silva</td><td>Orientação social</td><td><span class="g3n-demo-badge">Concluído</span></td></tr><tr><td>10:00</td><td>Exemplo de cadastro</td><td>Acompanhamento</td><td><span class="g3n-demo-badge warning">Agendado</span></td></tr><tr><td>14:00</td><td>Exemplo de cadastro</td><td>Encaminhamento</td><td><span class="g3n-demo-badge">Confirmado</span></td></tr></tbody></table></div></div></div><div class="col-lg-4"><div class="g3n-demo-card"><small>Ao registrar um atendimento</small><h3 class="h5 mt-2">A equipe consegue</h3><ul class="small ps-3 mb-0"><li>Consultar o histórico.</li><li>Registrar evolução.</li><li>Adicionar benefícios.</li><li>Encaminhar para serviços.</li><li>Acompanhar a agenda.</li></ul></div></div></div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="gestao-demo" role="tabpanel" aria-labelledby="gestao-tab" tabindex="0">
+                    <div class="g3n-demo-shell">
+                        <div class="g3n-demo-topbar"><div><strong>Administração e gestão</strong><small class="d-block">Exemplo de visão financeira e operacional</small></div><span class="g3n-demo-badge">gestão integrada</span></div>
+                        <div class="row g-3"><div class="col-md-4"><div class="g3n-demo-card"><small>Contas a pagar</small><p class="g3n-demo-value">R$ 8.450</p><span class="g3n-demo-badge warning">exemplo</span></div></div><div class="col-md-4"><div class="g3n-demo-card"><small>Projetos ativos</small><p class="g3n-demo-value">08</p><span class="g3n-demo-badge">acompanhamento</span></div></div><div class="col-md-4"><div class="g3n-demo-card"><small>Documentos para revisar</small><p class="g3n-demo-value">04</p><span class="g3n-demo-badge warning">pendências</span></div></div><div class="col-lg-7"><div class="g3n-demo-card"><h3 class="h5">Fluxo de gestão</h3><div class="row g-2 mt-2"><div class="col-6"><div class="border rounded p-2 small">1. Cadastro<br><strong>Instituição e pessoas</strong></div></div><div class="col-6"><div class="border rounded p-2 small">2. Operação<br><strong>Atendimentos e projetos</strong></div></div><div class="col-6"><div class="border rounded p-2 small">3. Controle<br><strong>Financeiro e documentos</strong></div></div><div class="col-6"><div class="border rounded p-2 small">4. Governança<br><strong>Relatórios e auditoria</strong></div></div></div></div></div><div class="col-lg-5"><div class="g3n-demo-card"><h3 class="h5">Funções complementares</h3><ul class="small ps-3 mb-0"><li>Perfis e permissões.</li><li>Mensagens personalizadas.</li><li>Backup e restauração.</li><li>Chamado técnico.</li><li>Manual e informações da licença.</li></ul></div></div></div>
                     </div>
                 </div>
             </div>
@@ -348,17 +490,17 @@
                 </div>
                 <div class="col-lg-2">
                     <h6 class="text-white mb-4">Soluções</h6>
-                    <a href="terceiro-setor.html" class="footer-link">Terceiro Setor</a>
-                    <a href="hotelaria.html" class="footer-link">Hotelaria</a>
-                    <a href="financeiro.html" class="footer-link">Financeiro</a>
-                    <a href="integradora.html" class="footer-link">Integração</a>
-                    <a href="pdv.html" class="footer-link">Frente de Caixa</a>
+                    <a href="terceiro-setor.html" class="footer-link">G3 - Terceiro Setor</a>
+                    <a href="hotelaria.html" class="footer-link">HotelWeb</a>
+                    <a href="financeiro.html" class="footer-link">Finance Pro Master</a>
+                    <a href="integradora.html" class="footer-link">Integra Lab</a>
+                    <a href="pdv.html" class="footer-link">Vapt Frente de caixa</a>
                 </div>
                 <div class="col-lg-4">
                     <h6 class="text-white mb-4">Fale Conosco</h6>
                     <p class="text-muted mb-2"><i class="fas fa-phone-alt me-2 text-cyan"></i> (34) 99269-3522</p>
                     <p class="text-muted mb-2"><i class="fas fa-envelope me-2 text-cyan"></i> comercial@torresoftbrasil.com.br</p>
-                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> Avenida Francisco Galassi, 1085 - Morada da Colina, Uberlândia - MG - Brasil</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-cyan"></i> Avenida Francisco Galassi, 1309 - Morada da Colina, Uberlândia - MG - Brasil</p>
                 </div>
             </div>
             <hr class="my-5 opacity-25">
