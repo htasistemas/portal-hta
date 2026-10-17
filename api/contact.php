@@ -36,8 +36,8 @@ if (!is_array($payload)) {
 }
 
 $requiredFields = [
-    'Nome completo',
-    'E-mail corporativo',
+    'nome_completo',
+    'email_corporativo',
     'Empresa',
     'Cargo',
     'WhatsApp',
@@ -46,12 +46,12 @@ $requiredFields = [
 ];
 
 $fieldLabels = [
-    'Motivo do contato',
-    'Nome completo',
-    'E-mail corporativo',
+    'motivo_contato',
+    'nome_completo',
+    'email_corporativo',
     'Empresa',
     'Cargo',
-    'Telefone fixo',
+    'telefone_fixo',
     'WhatsApp',
     'segmento_atuacao',
     'solucao_interesse',
@@ -66,7 +66,7 @@ foreach ($fieldLabels as $field) {
     $data[$field] = is_string($value) ? limit_text(trim($value), 2000) : '';
 }
 
-if (!filter_var($data['E-mail corporativo'], FILTER_VALIDATE_EMAIL)) {
+if (!filter_var($data['email_corporativo'], FILTER_VALIDATE_EMAIL)) {
     json_response(['error' => 'E-mail invalido.'], 400);
 }
 
@@ -82,7 +82,7 @@ if ($apiKey === '') {
         'MIME-Version: 1.0',
         'Content-Type: text/html; charset=UTF-8',
         'From: ' . $from,
-        'Reply-To: ' . $data['E-mail corporativo'],
+        'Reply-To: ' . $data['email_corporativo'],
     ];
 
     if (!mail($to, $subject, build_html_message($data, $fieldLabels), implode("\r\n", $headers))) {
@@ -96,7 +96,7 @@ if ($apiKey === '') {
 $body = json_encode([
     'from' => $from,
     'to' => $to,
-    'reply_to' => $data['E-mail corporativo'],
+    'reply_to' => $data['email_corporativo'],
     'subject' => $subject,
     'text' => build_text_message($data, $fieldLabels),
     'html' => build_html_message($data, $fieldLabels),

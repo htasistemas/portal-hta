@@ -1,6 +1,6 @@
 const REQUIRED_FIELDS = [
-  'Nome completo',
-  'E-mail corporativo',
+  'nome_completo',
+  'email_corporativo',
   'Empresa',
   'Cargo',
   'WhatsApp',
@@ -9,12 +9,12 @@ const REQUIRED_FIELDS = [
 ];
 
 const FIELD_LABELS = [
-  'Motivo do contato',
-  'Nome completo',
-  'E-mail corporativo',
+  'motivo_contato',
+  'nome_completo',
+  'email_corporativo',
   'Empresa',
   'Cargo',
-  'Telefone fixo',
+  'telefone_fixo',
   'WhatsApp',
   'segmento_atuacao',
   'solucao_interesse',
@@ -63,7 +63,7 @@ async function handleContact(request, env) {
     return jsonResponse({ error: 'Preencha todos os campos obrigatórios.' }, 400);
   }
 
-  if (!EMAIL_RE.test(data['E-mail corporativo'])) {
+  if (!EMAIL_RE.test(data.email_corporativo)) {
     return jsonResponse({ error: 'E-mail inválido.' }, 400);
   }
 
@@ -86,7 +86,7 @@ async function handleContact(request, env) {
     body: JSON.stringify({
       from,
       to,
-      reply_to: data['E-mail corporativo'],
+      reply_to: data.email_corporativo,
       subject,
       text,
       html
