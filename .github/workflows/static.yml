@@ -24,13 +24,13 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           CONTACT_FROM_EMAIL: ${{ secrets.CONTACT_FROM_EMAIL }}
           CONTACT_TO_EMAIL: ${{ secrets.CONTACT_TO_EMAIL }}
-          APP_EMAIL_HABILITADO: ${{ secrets.APP_EMAIL_HABILITADO }}
-          APP_EMAIL_REMETENTE: ${{ secrets.APP_EMAIL_REMETENTE }}
-          APP_EMAIL_NOME: ${{ secrets.APP_EMAIL_NOME }}
-          MAIL_HOST: ${{ secrets.MAIL_HOST }}
-          MAIL_PORT: ${{ secrets.MAIL_PORT }}
-          MAIL_USER: ${{ secrets.MAIL_USER }}
-          MAIL_PASS: ${{ secrets.MAIL_PASS }}
+          APP_EMAIL_HABILITADO: ${{ secrets.APP_EMAIL_HABILITADO || vars.APP_EMAIL_HABILITADO }}
+          APP_EMAIL_REMETENTE: ${{ secrets.APP_EMAIL_REMETENTE || vars.APP_EMAIL_REMETENTE }}
+          APP_EMAIL_NOME: ${{ secrets.APP_EMAIL_NOME || vars.APP_EMAIL_NOME }}
+          MAIL_HOST: ${{ secrets.MAIL_HOST || vars.MAIL_HOST }}
+          MAIL_PORT: ${{ secrets.MAIL_PORT || vars.MAIL_PORT }}
+          MAIL_USER: ${{ secrets.MAIL_USER || vars.MAIL_USER }}
+          MAIL_PASS: ${{ secrets.MAIL_PASS || vars.MAIL_PASS }}
         run: |
           mkdir -p dist
           cp *.html robots.txt sitemap.xml .htaccess dist/
