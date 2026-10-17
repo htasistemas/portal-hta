@@ -69,7 +69,7 @@ foreach ($fieldLabels as $field) {
 
 foreach ($requiredFields as $field) {
     if ($data[$field] === '') {
-        json_response(['error' => 'Preencha todos os campos obrigatorios.'], 400);
+        json_response(['error' => 'Preencha todos os campos obrigatorios.', 'field' => $field], 400);
     }
 }
 
