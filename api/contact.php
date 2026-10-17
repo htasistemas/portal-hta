@@ -42,8 +42,8 @@ $requiredFields = [
     'Empresa',
     'Cargo',
     'WhatsApp',
-    'Segmento de atuação',
-    'Solução de interesse',
+    'segmento_atuacao',
+    'solucao_interesse',
 ];
 
 $fieldLabels = [
@@ -54,10 +54,10 @@ $fieldLabels = [
     'Cargo',
     'Telefone fixo',
     'WhatsApp',
-    'Segmento de atuação',
-    'Solução de interesse',
-    'Quantidade de usuários',
-    'Melhor horário para contato',
+    'segmento_atuacao',
+    'solucao_interesse',
+    'quantidade_usuarios',
+    'melhor_horario',
     'Mensagem',
 ];
 
