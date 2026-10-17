@@ -247,7 +247,7 @@ function send_smtp_email(string $host, int $port, string $username, string $pass
         $message = 'From: ' . $sender . "\r\n"
             . 'To: ' . $recipient . "\r\n"
             . 'Reply-To: ' . $replyTo . "\r\n"
-            . 'Subject: ' . mb_encode_mimeheader($subject, 'UTF-8') . "\r\n"
+            . 'Subject: ' . encode_mime_header($subject) . "\r\n"
             . 'MIME-Version: 1.0' . "\r\n"
             . 'Content-Type: multipart/alternative; boundary="' . $boundary . '"' . "\r\n\r\n"
             . '--' . $boundary . "\r\nContent-Type: text/plain; charset=UTF-8\r\n\r\n"
@@ -282,7 +282,14 @@ function smtp_expect($socket, int $expectedCode): bool
         }
     }
 
-    return str_starts_with($response, (string) $expectedCode);
+    return substr($response, 0, 3) === (string) $expectedCode;
+}
+
+function encode_mime_header(string $value): string
+{
+    return function_exists('mb_encode_mimeheader')
+        ? mb_encode_mimeheader($value, 'UTF-8')
+        : $value;
 }
 
 function json_response(array $body, int $status = 200, array $headers = []): void
