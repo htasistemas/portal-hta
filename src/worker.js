@@ -112,16 +112,34 @@ function normalizePayload(payload) {
 
 function buildTextMessage(data) {
   return FIELD_LABELS
-    .map((field) => `${field}: ${data[field] || '-'}`)
+    .map((field) => `${displayFieldLabel(field)}: ${data[field] || '-'}`)
     .join('\n');
 }
 
 function buildHtmlMessage(data) {
   const rows = FIELD_LABELS.map((field) => {
-    return `<tr><th align="left" style="padding:8px;border-bottom:1px solid #e5e7eb;">${escapeHtml(field)}</th><td style="padding:8px;border-bottom:1px solid #e5e7eb;">${escapeHtml(data[field] || '-')}</td></tr>`;
+    return `<tr><th align="left" valign="top" style="width:38%;padding:13px 16px;border-bottom:1px solid #e5e7eb;color:#475569;font-size:13px;">${escapeHtml(displayFieldLabel(field))}</th><td style="padding:13px 16px;border-bottom:1px solid #e5e7eb;color:#0f172a;font-size:14px;">${escapeHtml(data[field] || '-')}</td></tr>`;
   }).join('');
 
-  return `<h2>Nova solicitação pelo site TorreSoft Sistemas</h2><table cellspacing="0" cellpadding="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">${rows}</table>`;
+  return `<div style="margin:0;background:#f1f5f9;padding:28px 14px;font-family:Arial,Helvetica,sans-serif;color:#0f172a;"><div style="max-width:680px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;"><div style="padding:26px 28px;background:linear-gradient(135deg,#082567,#08c8df);color:#fff;"><div style="font-size:12px;letter-spacing:1.4px;text-transform:uppercase;opacity:.82;">TorreSoft Sistemas</div><h2 style="margin:8px 0 0;font-size:22px;line-height:1.3;color:#fff;">Nova solicitação pelo site</h2><p style="margin:8px 0 0;font-size:14px;color:#e0f7fa;">Uma nova oportunidade foi recebida pelo formulário de contato.</p></div><div style="padding:22px 18px 8px;"><table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">${rows}</table></div><div style="padding:16px 28px 22px;color:#64748b;font-size:12px;border-top:1px solid #f1f5f9;">Mensagem enviada automaticamente pelo portal TorreSoft.</div></div></div>`;
+}
+
+function displayFieldLabel(field) {
+  const labels = {
+    motivo_contato: 'Motivo do contato',
+    nome_completo: 'Nome completo',
+    email_corporativo: 'E-mail corporativo',
+    telefone_fixo: 'Telefone fixo',
+    segmento_atuacao: 'Segmento de atuação',
+    solucao_interesse: 'Solução de interesse',
+    quantidade_usuarios: 'Quantidade de usuários',
+    melhor_horario: 'Melhor horário para contato',
+    WhatsApp: 'WhatsApp',
+    Empresa: 'Empresa',
+    Cargo: 'Cargo',
+    Mensagem: 'Mensagem'
+  };
+  return labels[field] || field;
 }
 
 function escapeHtml(value) {

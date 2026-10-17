@@ -178,7 +178,7 @@ function build_text_message(array $data, array $fieldLabels): string
 {
     $lines = [];
     foreach ($fieldLabels as $field) {
-        $lines[] = $field . ': ' . ($data[$field] ?: '-');
+        $lines[] = display_field_label($field) . ': ' . ($data[$field] ?: '-');
     }
     return implode("\n", $lines);
 }
@@ -187,16 +187,45 @@ function build_html_message(array $data, array $fieldLabels): string
 {
     $rows = '';
     foreach ($fieldLabels as $field) {
-        $rows .= '<tr><th align="left" style="padding:8px;border-bottom:1px solid #e5e7eb;">'
-            . htmlspecialchars($field, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
-            . '</th><td style="padding:8px;border-bottom:1px solid #e5e7eb;">'
+        $rows .= '<tr><th align="left" valign="top" style="width:38%;padding:13px 16px;border-bottom:1px solid #e5e7eb;color:#475569;font-size:13px;">'
+            . htmlspecialchars(display_field_label($field), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
+            . '</th><td style="padding:13px 16px;border-bottom:1px solid #e5e7eb;color:#0f172a;font-size:14px;">'
             . htmlspecialchars($data[$field] ?: '-', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
             . '</td></tr>';
     }
 
-    return '<h2>Nova solicitacao pelo site TorreSoft Sistemas</h2><table cellspacing="0" cellpadding="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">'
+    return '<div style="margin:0;background:#f1f5f9;padding:28px 14px;font-family:Arial,Helvetica,sans-serif;color:#0f172a;">'
+        . '<div style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 8px 24px rgba(15,23,42,.08);">'
+        . '<div style="padding:26px 28px;background:linear-gradient(135deg,#082567,#08c8df);color:#ffffff;">'
+        . '<div style="font-size:12px;letter-spacing:1.4px;text-transform:uppercase;opacity:.82;">TorreSoft Sistemas</div>'
+        . '<h2 style="margin:8px 0 0;font-size:22px;line-height:1.3;color:#ffffff;">Nova solicitação pelo site</h2>'
+        . '<p style="margin:8px 0 0;font-size:14px;color:#e0f7fa;">Uma nova oportunidade foi recebida pelo formulário de contato.</p>'
+        . '</div>'
+        . '<div style="padding:22px 18px 8px;"><table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">'
         . $rows
-        . '</table>';
+        . '</table></div>'
+        . '<div style="padding:16px 28px 22px;color:#64748b;font-size:12px;border-top:1px solid #f1f5f9;">Mensagem enviada automaticamente pelo portal TorreSoft.</div>'
+        . '</div></div>';
+}
+
+function display_field_label(string $field): string
+{
+    $labels = [
+        'motivo_contato' => 'Motivo do contato',
+        'nome_completo' => 'Nome completo',
+        'email_corporativo' => 'E-mail corporativo',
+        'telefone_fixo' => 'Telefone fixo',
+        'segmento_atuacao' => 'Segmento de atuação',
+        'solucao_interesse' => 'Solução de interesse',
+        'quantidade_usuarios' => 'Quantidade de usuários',
+        'melhor_horario' => 'Melhor horário para contato',
+        'WhatsApp' => 'WhatsApp',
+        'Empresa' => 'Empresa',
+        'Cargo' => 'Cargo',
+        'Mensagem' => 'Mensagem',
+    ];
+
+    return $labels[$field] ?? $field;
 }
 
 function send_smtp_email(string $host, int $port, string $username, string $password, string $sender, string $replyTo, string $recipient, string $subject, string $text, string $html): bool
