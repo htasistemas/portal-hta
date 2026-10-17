@@ -66,12 +66,6 @@ foreach ($fieldLabels as $field) {
     $data[$field] = is_string($value) ? limit_text(trim($value), 2000) : '';
 }
 
-foreach ($requiredFields as $field) {
-    if ($data[$field] === '') {
-        json_response(['error' => 'Preencha todos os campos obrigatorios.'], 400);
-    }
-}
-
 if (!filter_var($data['E-mail corporativo'], FILTER_VALIDATE_EMAIL)) {
     json_response(['error' => 'E-mail invalido.'], 400);
 }
