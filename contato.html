@@ -492,6 +492,8 @@
                     contactForm.reset();
                     contactFormStatus.className = 'text-center text-success small mt-2 mb-0';
                     contactFormStatus.textContent = 'Solicitação enviada com sucesso.';
+                    window.alert('E-mail enviado com sucesso! Em breve entraremos em contato.');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 } catch (error) {
                     contactFormStatus.className = 'text-center text-danger small mt-2 mb-0';
                     contactFormStatus.textContent = 'Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.';
