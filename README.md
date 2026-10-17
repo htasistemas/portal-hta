@@ -56,6 +56,13 @@ Cadastre tambem estes secrets no GitHub:
 - `RESEND_API_KEY`: chave da API do Resend (opcional; sem ela, o portal usa o envio nativo da Hostinger).
 - `CONTACT_FROM_EMAIL`: remetente validado no Resend, por exemplo `TorreSoft Sistemas <comercial@torresoftbrasil.com.br>`.
 - `CONTACT_TO_EMAIL`: destinatario das solicitacoes. O portal esta configurado para `g3n.terceirosetor@gmail.com`.
+- `APP_EMAIL_HABILITADO`: `true` para ativar o SMTP.
+- `APP_EMAIL_REMETENTE`: e-mail Gmail remetente.
+- `APP_EMAIL_NOME`: nome exibido no remetente.
+- `MAIL_HOST`: `smtp.gmail.com`.
+- `MAIL_PORT`: `587`.
+- `MAIL_USER`: usuário Gmail.
+- `MAIL_PASS`: senha de aplicativo do Gmail.
 
 O dominio usado no `CONTACT_FROM_EMAIL` precisa estar validado no Resend antes da publicacao em producao.
 
