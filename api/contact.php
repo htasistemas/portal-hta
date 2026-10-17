@@ -18,6 +18,19 @@ if ($contentLength > 20000) {
 
 $rawBody = file_get_contents('php://input') ?: '';
 $payload = json_decode($rawBody, true);
+
+if (!is_array($payload) && !empty($_POST)) {
+    $payload = $_POST;
+}
+
+if (!is_array($payload) && $rawBody !== '') {
+    $formPayload = [];
+    parse_str($rawBody, $formPayload);
+    if (!empty($formPayload)) {
+        $payload = $formPayload;
+    }
+}
+
 if (!is_array($payload)) {
     json_response(['error' => 'Dados invalidos.'], 400);
 }
