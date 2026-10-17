@@ -1,4 +1,5 @@
 const REQUIRED_FIELDS = [
+  'Motivo do contato',
   'Nome completo',
   'E-mail corporativo',
   'Empresa',
@@ -9,6 +10,7 @@ const REQUIRED_FIELDS = [
 ];
 
 const FIELD_LABELS = [
+  'Motivo do contato',
   'Nome completo',
   'E-mail corporativo',
   'Empresa',
@@ -70,7 +72,7 @@ async function handleContact(request, env) {
     return jsonResponse({ error: 'Servidor de e-mail não configurado.' }, 500);
   }
 
-  const to = env.CONTACT_TO_EMAIL || 'comercial@torresoftbrasil.com.br';
+  const to = env.CONTACT_TO_EMAIL || 'g3n.terceirosetor@gmail.com';
   const from = env.CONTACT_FROM_EMAIL || 'TorreSoft Sistemas <comercial@torresoftbrasil.com.br>';
   const subject = `Solicitação pelo site - ${data.Empresa}`;
   const text = buildTextMessage(data);

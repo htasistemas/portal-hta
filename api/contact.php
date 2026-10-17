@@ -23,6 +23,7 @@ if (!is_array($payload)) {
 }
 
 $requiredFields = [
+    'Motivo do contato',
     'Nome completo',
     'E-mail corporativo',
     'Empresa',
@@ -33,6 +34,7 @@ $requiredFields = [
 ];
 
 $fieldLabels = [
+    'Motivo do contato',
     'Nome completo',
     'E-mail corporativo',
     'Empresa',
@@ -68,7 +70,7 @@ if ($apiKey === '') {
     json_response(['error' => 'Servidor de e-mail nao configurado.'], 500);
 }
 
-$to = config_value($config, 'CONTACT_TO_EMAIL') ?: 'comercial@torresoftbrasil.com.br';
+$to = config_value($config, 'CONTACT_TO_EMAIL') ?: 'g3n.terceirosetor@gmail.com';
 $from = config_value($config, 'CONTACT_FROM_EMAIL') ?: 'TorreSoft Sistemas <comercial@torresoftbrasil.com.br>';
 $subject = 'Solicitacao pelo site - ' . $data['Empresa'];
 

@@ -55,7 +55,7 @@ Cadastre tambem estes secrets no GitHub:
 
 - `RESEND_API_KEY`: chave da API do Resend.
 - `CONTACT_FROM_EMAIL`: remetente validado no Resend, por exemplo `TorreSoft Sistemas <comercial@torresoftbrasil.com.br>`.
-- `CONTACT_TO_EMAIL`: destinatario das solicitacoes, por exemplo `comercial@torresoftbrasil.com.br`.
+- `CONTACT_TO_EMAIL`: destinatario das solicitacoes. O portal esta configurado para `g3n.terceirosetor@gmail.com`.
 
 O dominio usado no `CONTACT_FROM_EMAIL` precisa estar validado no Resend antes da publicacao em producao.
 
