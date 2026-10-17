@@ -1,5 +1,4 @@
 const REQUIRED_FIELDS = [
-  'Motivo do contato',
   'Nome completo',
   'E-mail corporativo',
   'Empresa',
