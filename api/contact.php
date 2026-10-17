@@ -94,6 +94,11 @@ if ($smtpEnabled && $smtpUser !== '' && $smtpPass !== '') {
     json_response(['ok' => true]);
 }
 
+if ($smtpEnabled && ($smtpUser === '' || $smtpPass === '')) {
+    error_log('SMTP habilitado, mas MAIL_USER ou MAIL_PASS nao foi carregado.');
+    json_response(['error' => 'Configuracao SMTP incompleta.'], 500);
+}
+
 if ($apiKey === '') {
     $headers = [
         'MIME-Version: 1.0',
