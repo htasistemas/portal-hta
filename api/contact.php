@@ -66,13 +66,26 @@ if (!filter_var($data['E-mail corporativo'], FILTER_VALIDATE_EMAIL)) {
 
 $config = load_contact_config();
 $apiKey = config_value($config, 'RESEND_API_KEY');
-if ($apiKey === '') {
-    json_response(['error' => 'Servidor de e-mail nao configurado.'], 500);
-}
 
 $to = config_value($config, 'CONTACT_TO_EMAIL') ?: 'g3n.terceirosetor@gmail.com';
 $from = config_value($config, 'CONTACT_FROM_EMAIL') ?: 'TorreSoft Sistemas <comercial@torresoftbrasil.com.br>';
 $subject = 'Solicitacao pelo site - ' . $data['Empresa'];
+
+if ($apiKey === '') {
+    $headers = [
+        'MIME-Version: 1.0',
+        'Content-Type: text/html; charset=UTF-8',
+        'From: ' . $from,
+        'Reply-To: ' . $data['E-mail corporativo'],
+    ];
+
+    if (!mail($to, $subject, build_html_message($data, $fieldLabels), implode("\r\n", $headers))) {
+        error_log('Falha ao enviar e-mail de contato pelo mail() nativo.');
+        json_response(['error' => 'Servidor de e-mail nao configurado.'], 500);
+    }
+
+    json_response(['ok' => true]);
+}
 
 $body = json_encode([
     'from' => $from,
