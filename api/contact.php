@@ -76,6 +76,23 @@ $apiKey = config_value($config, 'RESEND_API_KEY');
 $to = config_value($config, 'CONTACT_TO_EMAIL') ?: 'g3n.terceirosetor@gmail.com';
 $from = config_value($config, 'CONTACT_FROM_EMAIL') ?: 'TorreSoft Sistemas <comercial@torresoftbrasil.com.br>';
 $subject = 'Solicitacao pelo site - ' . $data['Empresa'];
+$smtpEnabled = strtolower(config_value($config, 'APP_EMAIL_HABILITADO')) === 'true';
+$smtpHost = config_value($config, 'MAIL_HOST') ?: 'smtp.gmail.com';
+$smtpPort = (int) (config_value($config, 'MAIL_PORT') ?: 587);
+$smtpUser = config_value($config, 'MAIL_USER');
+$smtpPass = config_value($config, 'MAIL_PASS');
+$smtpSender = config_value($config, 'APP_EMAIL_REMETENTE') ?: $smtpUser;
+$smtpName = config_value($config, 'APP_EMAIL_NOME') ?: 'TorreSoft Sistemas';
+
+if ($smtpEnabled && $smtpUser !== '' && $smtpPass !== '') {
+    $smtpFrom = $smtpName . ' <' . $smtpSender . '>';
+    if (!send_smtp_email($smtpHost, $smtpPort, $smtpUser, $smtpPass, $smtpSender, $data['email_corporativo'], $to, $subject, build_text_message($data, $fieldLabels), build_html_message($data, $fieldLabels))) {
+        error_log('Falha ao enviar e-mail de contato via SMTP.');
+        json_response(['error' => 'Falha ao enviar e-mail.'], 502);
+    }
+
+    json_response(['ok' => true]);
+}
 
 if ($apiKey === '') {
     $headers = [
@@ -175,6 +192,92 @@ function build_html_message(array $data, array $fieldLabels): string
     return '<h2>Nova solicitacao pelo site TorreSoft Sistemas</h2><table cellspacing="0" cellpadding="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">'
         . $rows
         . '</table>';
+}
+
+function send_smtp_email(string $host, int $port, string $username, string $password, string $sender, string $replyTo, string $recipient, string $subject, string $text, string $html): bool
+{
+    $socket = @stream_socket_client('tcp://' . $host . ':' . $port, $errorCode, $errorMessage, 15, STREAM_CLIENT_CONNECT);
+    if (!is_resource($socket)) {
+        error_log('SMTP connection failed: ' . $errorMessage);
+        return false;
+    }
+
+    stream_set_timeout($socket, 15);
+    try {
+        if (!smtp_expect($socket, 220)) {
+            return false;
+        }
+        if (!smtp_command($socket, 'EHLO torresoftbrasil.com.br', 250)) {
+            return false;
+        }
+        if (!smtp_command($socket, 'STARTTLS', 220)) {
+            return false;
+        }
+        if (!@stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+            return false;
+        }
+        if (!smtp_command($socket, 'EHLO torresoftbrasil.com.br', 250)) {
+            return false;
+        }
+        if (!smtp_command($socket, 'AUTH LOGIN', 334)) {
+            return false;
+        }
+        if (!smtp_command($socket, base64_encode($username), 334)) {
+            return false;
+        }
+        if (!smtp_command($socket, base64_encode($password), 235)) {
+            return false;
+        }
+        if (!smtp_command($socket, 'MAIL FROM:<' . $sender . '>', 250)) {
+            return false;
+        }
+        if (!smtp_command($socket, 'RCPT TO:<' . $recipient . '>', 250)) {
+            return false;
+        }
+        if (!smtp_command($socket, 'DATA', 354)) {
+            return false;
+        }
+
+        $boundary = '=_contact_' . bin2hex(random_bytes(8));
+        $message = 'From: ' . $sender . "\r\n"
+            . 'To: ' . $recipient . "\r\n"
+            . 'Reply-To: ' . $replyTo . "\r\n"
+            . 'Subject: ' . mb_encode_mimeheader($subject, 'UTF-8') . "\r\n"
+            . 'MIME-Version: 1.0' . "\r\n"
+            . 'Content-Type: multipart/alternative; boundary="' . $boundary . '"' . "\r\n\r\n"
+            . '--' . $boundary . "\r\nContent-Type: text/plain; charset=UTF-8\r\n\r\n"
+            . $text . "\r\n\r\n--" . $boundary . "\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n"
+            . $html . "\r\n\r\n--" . $boundary . "--\r\n";
+
+        $message = preg_replace('/(^|\r\n)\./', '$1..', $message) ?: $message;
+        fwrite($socket, $message . "\r\n.\r\n");
+        if (!smtp_expect($socket, 250)) {
+            return false;
+        }
+        fwrite($socket, "QUIT\r\n");
+        return true;
+    } finally {
+        fclose($socket);
+    }
+}
+
+function smtp_command($socket, string $command, int $expectedCode): bool
+{
+    fwrite($socket, $command . "\r\n");
+    return smtp_expect($socket, $expectedCode);
+}
+
+function smtp_expect($socket, int $expectedCode): bool
+{
+    $response = '';
+    while (($line = fgets($socket, 2048)) !== false) {
+        $response .= $line;
+        if (strlen($line) < 4 || $line[3] === ' ') {
+            break;
+        }
+    }
+
+    return str_starts_with($response, (string) $expectedCode);
 }
 
 function json_response(array $body, int $status = 200, array $headers = []): void
