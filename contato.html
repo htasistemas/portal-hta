@@ -372,6 +372,7 @@
                             <select class="form-select" name="motivo_contato" required>
                                     <option value="" selected disabled>Selecione o motivo</option>
                                     <option>Agendar demonstração</option>
+                                    <option>Cadastro / primeiro acesso ao G3N</option>
                                     <option>Solicitar proposta comercial</option>
                                     <option>Suporte ao cliente</option>
                                     <option>Implantação ou treinamento</option>
@@ -602,6 +603,15 @@
                     submitButton.innerHTML = originalButtonText;
                 }
             });
+        }
+    </script>
+    <script>
+        const contactQuery = new URLSearchParams(window.location.search);
+        if (contactQuery.get('assunto') === 'cadastro-g3n') {
+            const motivoSelect = document.querySelector('select[name="motivo_contato"]');
+            const solucaoSelect = document.querySelector('select[name="solucao_interesse"]');
+            if (motivoSelect) motivoSelect.value = 'Cadastro / primeiro acesso ao G3N';
+            if (solucaoSelect) solucaoSelect.value = 'G3N / Terceiro Setor';
         }
     </script>
     <script>

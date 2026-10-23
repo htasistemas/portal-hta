@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TorreSoft Brasil | Sistemas de Gestão para Empresas e Terceiro Setor</title>
-    <meta name="description" content="Conheça os sistemas de gestão da TorreSoft Brasil para empresas, hotelaria e organizações do terceiro setor. Tecnologia para organizar operações e decisões.">
+    <meta name="description" content="Conheça o G3N e os sistemas de gestão da TorreSoft Brasil para empresas, hotelaria e organizações do terceiro setor.">
     <link rel="canonical" href="https://torresoftbrasil.com.br/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="TorreSoft Sistemas">
     <meta property="og:title" content="TorreSoft Brasil | Sistemas de Gestão para Empresas e Terceiro Setor">
-    <meta property="og:description" content="Conheça os sistemas de gestão da TorreSoft Brasil para empresas, hotelaria e organizações do terceiro setor. Tecnologia para organizar operações e decisões.">
+    <meta property="og:description" content="Conheça o G3N e os sistemas de gestão da TorreSoft Brasil para empresas, hotelaria e organizações do terceiro setor.">
     <meta property="og:url" content="https://torresoftbrasil.com.br/">
     <meta property="og:image" content="https://torresoftbrasil.com.br/img/torresoft-logo-azul-20260816.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TorreSoft Brasil | Sistemas de Gestão para Empresas e Terceiro Setor">
-    <meta name="twitter:description" content="Conheça os sistemas de gestão da TorreSoft Brasil para empresas, hotelaria e organizações do terceiro setor. Tecnologia para organizar operações e decisões.">
+    <meta name="twitter:description" content="Conheça o G3N e os sistemas de gestão da TorreSoft Brasil para empresas, hotelaria e organizações do terceiro setor.">
     <meta name="twitter:image" content="https://torresoftbrasil.com.br/img/torresoft-logo-azul-20260816.png">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://torresoftbrasil.com.br/#organization","name":"TorreSoft Brasil","url":"https://torresoftbrasil.com.br/","logo":"https://torresoftbrasil.com.br/img/torresoft-logo-azul-20260816.png","telephone":"+55-34-99269-3522","email":"comercial@torresoftbrasil.com.br","address":{"@type":"PostalAddress","streetAddress":"Avenida Francisco Galassi, 1309 - Morada da Colina","addressLocality":"Uberlândia","addressRegion":"MG","addressCountry":"BR"}},{"@type":"WebSite","@id":"https://torresoftbrasil.com.br/#website","url":"https://torresoftbrasil.com.br/","name":"TorreSoft Brasil","publisher":{"@id":"https://torresoftbrasil.com.br/#organization"},"inLanguage":"pt-BR"},{"@type":"WebPage","@id":"https://torresoftbrasil.com.br/#webpage","url":"https://torresoftbrasil.com.br/","name":"TorreSoft Brasil | Sistemas de Gestão para Empresas e Terceiro Setor","isPartOf":{"@id":"https://torresoftbrasil.com.br/#website"},"about":{"@id":"https://torresoftbrasil.com.br/#organization"},"inLanguage":"pt-BR"}]}
@@ -413,6 +413,40 @@
             color: var(--color-royal-blue);
         }
 
+        .g3n-home-feature {
+            background: linear-gradient(135deg, #08162d 0%, #173a78 62%, #126b88 100%);
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .g3n-home-feature::after {
+            content: "G3N";
+            position: absolute;
+            right: 5%;
+            bottom: -42px;
+            color: rgba(255,255,255,.06);
+            font-size: clamp(7rem, 18vw, 14rem);
+            line-height: .8;
+            font-weight: 900;
+            letter-spacing: -.08em;
+            pointer-events: none;
+        }
+
+        .g3n-home-feature .container { position: relative; z-index: 1; }
+        .g3n-home-kicker { color: var(--color-cyan); font-size: .76rem; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; }
+        .g3n-home-feature h2 { color: #fff; margin: 12px 0 14px; }
+        .g3n-home-feature p { color: rgba(255,255,255,.8); max-width: 670px; }
+        .g3n-home-points { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 22px 0 26px; color: rgba(255,255,255,.9); font-size: .92rem; }
+        .g3n-home-points span i { color: var(--color-cyan); margin-right: 7px; }
+        .g3n-home-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .g3n-home-actions .btn-g3n-primary { background: var(--color-cyan); color: #07162b; border-color: var(--color-cyan); }
+        .g3n-home-actions .btn-g3n-primary:hover { background: #fff; border-color: #fff; color: #07162b; }
+
+        @media (max-width: 575px) {
+            .g3n-home-actions a { width: 100%; text-align: center; }
+        }
+
         .differential-icon {
             width: 70px;
             height: 70px;
@@ -514,6 +548,25 @@
                         <div><strong>Gestão orientada por dados</strong><span>Indicadores, relatórios e processos integrados para decisões mais rápidas.</span></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaque G3N -->
+    <section class="section-padding g3n-home-feature" aria-labelledby="g3n-home-title">
+        <div class="container" data-aos="fade-up">
+            <span class="g3n-home-kicker"><i class="fas fa-hand-holding-heart me-2"></i>Solução TorreSoft para o Terceiro Setor</span>
+            <h2 id="g3n-home-title">G3N: gestão mais simples, transparente e conectada</h2>
+            <p>Organize cadastros, projetos, atendimentos, financeiro e prestação de contas em um único sistema criado para a realidade de ONGs, OSCs e instituições sociais.</p>
+            <div class="g3n-home-points">
+                <span><i class="fas fa-check-circle"></i>Cadastros organizados</span>
+                <span><i class="fas fa-check-circle"></i>Indicadores em tempo real</span>
+                <span><i class="fas fa-check-circle"></i>Prestação de contas com mais controle</span>
+            </div>
+            <div class="g3n-home-actions">
+                <a href="https://g3n.torresoftbrasil.com.br/" target="_blank" rel="noopener noreferrer" class="btn-premium btn-g3n-primary" data-conversion="acessar_g3n"><i class="fas fa-arrow-up-right-from-square me-2"></i>Acessar o G3N</a>
+                <a href="terceiro-setor.html" class="btn-outline-premium text-white border-white">Conhecer a solução</a>
+                <a href="contato.html?assunto=cadastro-g3n" class="btn-outline-premium text-white border-white" data-conversion="cadastro_g3n"><i class="fas fa-user-plus me-2"></i>Solicitar cadastro</a>
             </div>
         </div>
     </section>
