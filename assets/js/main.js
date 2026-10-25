@@ -130,4 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.unobserve(statsSection);
         }
     }
+
+    // Mantém os nomes e a ordem alfabética do menu global de soluções.
+    document.querySelectorAll('.navbar .dropdown-menu').forEach(menu => {
+        const labels = {
+            'G3 - Terceiro Setor': 'G3N - Terceiro Setor',
+            'HotelWeb': 'GHW - Gestão de Hotelaria Web',
+            'Gestão Agrícola': 'SGA - Sistema de Gestão Agrícola',
+            'Vapt Frente de caixa': 'Vapt Frente de Caixa'
+        };
+
+        Array.from(menu.querySelectorAll('.dropdown-item')).forEach(item => {
+            const current = item.textContent.trim();
+            if (labels[current]) item.textContent = labels[current];
+        });
+
+        Array.from(menu.children)
+            .sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim(), 'pt-BR'))
+            .forEach(item => menu.appendChild(item));
+    });
 });
