@@ -136,8 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const labels = {
             'G3 - Terceiro Setor': 'G3N - Terceiro Setor',
             'HotelWeb': 'GHW - Gestão de Hotelaria Web',
+            'Finance Pro Master': 'FPM - Finance Pro Master',
+            'Integra Lab': 'GIL - Gestão de Integração Laboratorial',
             'Gestão Agrícola': 'SGA - Sistema de Gestão Agrícola',
-            'Vapt Frente de caixa': 'Vapt Frente de Caixa'
+            'Vapt Frente de caixa': 'GFC - Gestão de Frente de Caixa',
+            'Vapt Frente de Caixa': 'GFC - Gestão de Frente de Caixa'
         };
 
         Array.from(menu.querySelectorAll('.dropdown-item')).forEach(item => {
